@@ -4,8 +4,11 @@ import { CommonModule } from '@angular/common';
 import { EcommerceRoutingModule } from './ecommerce-routing.module';
 
 
+
+
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
     EcommerceRoutingModule

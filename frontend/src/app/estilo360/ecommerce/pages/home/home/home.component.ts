@@ -13,6 +13,11 @@ export class HomeComponent {
             img: '',
             desription: '',
         },
+        {
+            title: 'WAY KANBAS MINI EBONY',
+            img: '',
+            desription: '',
+        }
     ];
 
     categories = [

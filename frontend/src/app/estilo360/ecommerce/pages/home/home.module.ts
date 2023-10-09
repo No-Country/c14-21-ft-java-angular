@@ -21,6 +21,8 @@ import { CarouselModule } from 'primeng/carousel';
         PanelModule,
         ButtonModule,
         CarouselModule,
+
+
     ],
 })
 export class HomeModule {}
