@@ -1,0 +1,20 @@
+$divider-color: --text-color;
+#hero {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), radial-gradient(77.36% 256.97% at 77.36% 57.52%, #EEEFAF 0%, #C3E3FA 100%);
+    clip-path: ellipse(150% 87% at 93% 13%);
+}
+
+.product-title {
+    padding-top: 50px;
+    font-size: 80px;
+}
+
+.divider {
+    border-top: 2px solid var(--text-color);
+    margin: 10px 0;
+    width: 20%;
+}
+
+.product-description {
+    font-size: 20px;
+}
