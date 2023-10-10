@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DialogService } from 'primeng/dynamicdialog';
+import { ShoppingCartComponent } from '../../../eshared/components/shopping-cart/shopping-cart.component';
 
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
+    providers: [DialogService],
 })
 export class HomeComponent {
     products = [
@@ -17,7 +20,7 @@ export class HomeComponent {
             title: 'WAY KANBAS MINI EBONY',
             img: '',
             desription: '',
-        }
+        },
     ];
 
     categories = [
@@ -109,5 +112,11 @@ export class HomeComponent {
             ],
         },
     ];
-    constructor(public router: Router) {}
+    constructor(public router: Router, private dialogService: DialogService) {}
+
+    onShowCart() {
+        this.dialogService.open(ShoppingCartComponent, {
+            width: '70%',
+        });
+    }
 }

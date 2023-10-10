@@ -1,0 +1,49 @@
+<div class="flex flex-wrap">
+    <div class="col-2 hero-img-container">
+        <img
+            width="100%"
+            class="hero-img"
+            src="assets/ecommerce/products/product.jpg"
+            alt=""
+        />
+    </div>
+    <div class="col-4">
+        <h5 class="font-serif">Product title</h5>
+
+        <span class="line-through text-slate-950">$1,200.00</span> <br />
+        <span class="text-xl font-semibold">$1,200.00</span> <br />
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
+        <br />
+        <span></span>
+    </div>
+    <div class="flex col-2 align-self-center">
+        <span class="p-buttonset">
+            <button
+                pButton
+                pRipple
+                class="p-button-sm"
+                icon="pi pi-minus"
+            ></button>
+            <button
+                pButton
+                pRipple
+                class="p-button-sm"
+                disabled
+                label="1"
+            ></button>
+            <button
+                pButton
+                pRipple
+                class="p-button-sm"
+                icon="pi pi-plus"
+            ></button>
+        </span>
+    </div>
+    <div class="flex col-2 align-self-center justify-content-end">
+        <span>{{ "1200" | currency }}</span>
+    </div>
+
+    <div class="flex col-2 align-self-center justify-content-center">
+        <span>x</span>
+    </div>
+</div>

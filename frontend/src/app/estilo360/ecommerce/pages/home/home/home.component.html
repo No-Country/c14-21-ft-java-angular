@@ -1,8 +1,5 @@
-
-
 <div class="surface-0 flex justify-content-center">
     <div id="home" class="landing-wrapper overflow-hidden">
-
         <div
             class="py-4 px-4 mx-0 md:mx-6 lg:mx-8 lg:px-8 flex align-items-center justify-content-between relative lg:static mb-3"
         >
@@ -35,9 +32,7 @@
                 >
                     <li>
                         <a
-                            (click)="
-                                router.navigate(['/ecommerce'])
-                            "
+                            (click)="router.navigate(['/ecommerce'])"
                             pRipple
                             class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3"
                         >
@@ -102,16 +97,15 @@
                         icon="pi pi-user"
                         class="p-button-text p-button-rounded border-none font-light line-height-2 text-blue-500"
                     ></button>
-                    <button
-                        pButton
-                        pRipple
+                    <p-button
+                        (onClick)="onShowCart()"
                         icon="pi pi-shopping-cart"
-                        class="p-button-rounded p-button-secondary p-button-outlined"
-                    ></button>
+                        styleClass="p-button-rounded p-button-secondary p-button-outlined"
+                    >
+                    </p-button>
                 </div>
             </div>
         </div>
-
 
         <div class="row carousel-container">
             <div class="container">
@@ -214,7 +208,6 @@
                             </div>
 
                             <!-- Fin Hero -->
-
                         </ng-template>
                     </p-carousel>
                 </div>
@@ -400,7 +393,5 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 </div>
