@@ -1,0 +1,42 @@
+.container {
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: 800px) {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.categories-container {
+    margin: 0 auto;
+
+    @media (min-width: 1200px) {
+        width: 90%;
+        max-width: 1200px;
+    }
+
+    @media (max-width: 1200px) {
+        width: 80%;
+        max-width: 1200px;
+    }
+
+    .grid {
+        .card-container {
+            @media (min-width: 450px) and (max-width: 767px) {
+                width: 50% !important;
+            }
+        }
+    }
+
+    .category-name {
+        margin-bottom: 0;
+    }
+
+    hr {
+        border-color: black;
+        border-width: 1.5px;
+        border-style: solid;
+        margin-top: 8px;
+    }
+}

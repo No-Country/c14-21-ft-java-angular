@@ -11,20 +11,27 @@ import { EventService } from './demo/service/event.service';
 import { IconService } from './demo/service/icon.service';
 import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
+import { EcommerceLayoutModule } from './layouts/ecommerce-layout/ecommerce-layout.module';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
 
 @NgModule({
-    declarations: [
-        AppComponent, NotfoundComponent
-    ],
+    declarations: [AppComponent, NotfoundComponent],
     imports: [
         AppRoutingModule,
-        AppLayoutModule
+        AppLayoutModule,
+        EcommerceLayoutModule,
+        DynamicDialogModule,
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
-        CountryService, CustomerService, EventService, IconService, NodeService,
-        PhotoService, ProductService
+        CountryService,
+        CustomerService,
+        EventService,
+        IconService,
+        NodeService,
+        PhotoService,
+        ProductService,
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

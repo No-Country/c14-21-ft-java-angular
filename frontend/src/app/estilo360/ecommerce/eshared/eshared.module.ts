@@ -7,6 +7,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { InputMaskModule } from 'primeng/inputmask';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { DividerModule } from 'primeng/divider';
 
 @NgModule({
     declarations: [ShoppingCartComponent],
@@ -19,6 +20,7 @@ import { ButtonModule } from 'primeng/button';
         InputNumberModule,
         InputTextModule,
         ButtonModule,
+        DividerModule,
     ],
     exports: [ShoppingCartComponent, InputNumberModule, InputTextModule],
 })

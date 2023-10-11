@@ -2,6 +2,7 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { NotfoundComponent } from './demo/components/notfound/notfound.component';
 import { AppLayoutComponent } from './layout/app.layout.component';
+import { EcommerceLayoutComponent } from './layouts/ecommerce-layout/ecommerce-layout.component';
 
 @NgModule({
     imports: [
@@ -56,6 +57,21 @@ import { AppLayoutComponent } from './layout/app.layout.component';
                     ],
                 },
                 {
+                    path: 'ecommerce',
+                    component: EcommerceLayoutComponent,
+                    children: [
+                        {
+                            path: '',
+                            loadChildren: async () =>
+                                (
+                                    await import(
+                                        './estilo360/ecommerce/ecommerce.module'
+                                    )
+                                ).EcommerceModule,
+                        },
+                    ],
+                },
+                {
                     path: 'auth',
                     loadChildren: () =>
                         import('./demo/components/auth/auth.module').then(
@@ -75,12 +91,7 @@ import { AppLayoutComponent } from './layout/app.layout.component';
                         (await import('./estilo360/admin/admin.module'))
                             .AdminModule,
                 },
-                {
-                    path: 'ecommerce',
-                    loadChildren: async () =>
-                        (await import('./estilo360/ecommerce/ecommerce.module'))
-                            .EcommerceModule,
-                },
+
                 { path: 'notfound', component: NotfoundComponent },
                 { path: '**', redirectTo: '/notfound' },
             ],

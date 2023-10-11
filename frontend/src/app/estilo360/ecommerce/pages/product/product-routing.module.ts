@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ProductComponent } from './product/product.component';
 
 const routes: Routes = [
     {
         path: '',
-        loadChildren: async () =>
-            (await import('./home/home.module')).HomeModule,
+        component: ProductComponent,
     },
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule],
 })
-export class PagesRoutingModule {}
+export class ProductRoutingModule {}
