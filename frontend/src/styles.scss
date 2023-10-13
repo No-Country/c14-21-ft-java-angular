@@ -13,11 +13,16 @@ $gutter: 1rem; //for primeflex grid system
 @import "assets/demo/styles/badges.scss";
 @import "assets/demo/styles/code.scss";
 
-
-body{
-    background-color: #F7F6F4;
+body {
+    background-color: #f7f6f4;
 }
 
-.header-container,.footer-container{
+.header-container,
+.footer-container {
     background-color: white;
+}
+
+.p-menuitem-link-active {
+    background-color: #4f46e5 !important;
+    color: white !important;
 }

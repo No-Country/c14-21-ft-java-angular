@@ -1,0 +1,109 @@
+<div class="card" *ngIf="!isLogged">
+    <div class="grid">
+        <div
+            class="sm:col-12 md:col-5 flex align-items-center justify-content-center"
+        >
+            <app-checkout-login
+                (successLogin)="switchLogin()"
+            ></app-checkout-login>
+        </div>
+        <div class="sm:hidden sm:col-12 md:block md:col-2">
+            <p-divider layout="vertical"> </p-divider>
+        </div>
+        <div class="md:hidden col-12">
+            <p-divider> </p-divider>
+        </div>
+        <div
+            class="sm:col-12 md:col-5 flex align-items-center justify-content-center"
+        >
+            <app-checkout-register
+                (successRegister)="switchLogin()"
+            ></app-checkout-register>
+        </div>
+    </div>
+</div>
+
+<div class="card" *ngIf="isLogged">
+    <div class="grid">
+        <div class="md:col-7 sm:col-12">
+            <div class="p-fluid p-formgrid grid">
+                <h2 class="text-center">Datos de Envío</h2>
+                <div class="field sm:col-12 md:col-12">
+                    <label>Calle</label>
+                    <input pInputText type="text" />
+                </div>
+
+                <div class="field sm:col-12 md:col-6">
+                    <label>Número Ext.</label>
+                    <input pInputText type="number" />
+                </div>
+                <div class="field sm:col-12 md:col-6">
+                    <label>Número Int.</label>
+                    <input pInputText type="number" />
+                </div>
+
+                <div class="field sm:col-12 md:col-6">
+                    <label htmlFor="state">Pais</label>
+                    <p-dropdown [options]="[]" optionLabel="name"></p-dropdown>
+                </div>
+
+                <div class="field sm:col-12 md:col-6">
+                    <label htmlFor="state">Estado</label>
+                    <p-dropdown [options]="[]" optionLabel="name"></p-dropdown>
+                </div>
+
+                <div class="field sm:col-12 md:col-6">
+                    <label htmlFor="state">Ciudad</label>
+                    <p-dropdown [options]="[]" optionLabel="name"></p-dropdown>
+                </div>
+
+                <div class="field sm:col-12 md:col-6">
+                    <label>Código Postal</label>
+                    <input pInputText type="number" />
+                </div>
+
+                <div class="field col-12 flex justify-content-end">
+                    <div>
+                        <p-button
+                            label="Siguiente"
+                            class="mt-2"
+                            (onClick)="nextStep()"
+                        ></p-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="md:col-5 sm:col-12">
+            <p-table [value]="cart" styleClass="p-datatable-gridlines">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th class="text-center text-xl" colspan="3">
+                            Carrito de Compras
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-product>
+                    <tr>
+                        <td>
+                            {{ product.name }}
+                        </td>
+                        <td [width]="60" class="text-right">
+                            {{ product.quantity }}
+                        </td>
+                        <td [width]="150" class="text-right">
+                            {{ product.price | currency }}
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="footer">
+                    <tr>
+                        <td colspan="2" class="text-right">Total:</td>
+                        <td class="text-right">
+                            {{ 123333 | currency }}
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>
