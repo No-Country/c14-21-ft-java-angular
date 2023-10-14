@@ -12,6 +12,16 @@ const routes: Routes = [
         loadChildren: async () =>
             (await import('./pages/product/product.module')).ProductModule,
     },
+    {
+        path: 'checkout',
+        loadChildren: async () =>
+            (await import('./pages/checkout/checkout.module')).CheckoutModule,
+    },
+    {
+        path: 'profile',
+        loadChildren: async () =>
+            (await import('./pages/eprofile/eprofile.module')).EprofileModule,
+    },
 ];
 
 @NgModule({

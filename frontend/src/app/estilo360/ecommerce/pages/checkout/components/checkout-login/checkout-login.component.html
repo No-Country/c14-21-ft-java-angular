@@ -1,0 +1,16 @@
+<div class="p-fluid">
+    <h2 class="text-center">Ya soy cliente</h2>
+    <div class="field">
+        <label>Correo</label>
+        <input pInputText type="text" />
+    </div>
+    <div class="field">
+        <label>Contraseña</label>
+        <input pInputText type="password" />
+    </div>
+    <p-button
+        label="Iniciar Sesión"
+        class="mt-2"
+        (onClick)="successLogin.emit()"
+    ></p-button>
+</div>

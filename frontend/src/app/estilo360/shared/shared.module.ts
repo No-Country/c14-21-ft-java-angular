@@ -11,6 +11,9 @@ import { StyleClassModule } from 'primeng/styleclass';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { DropdownModule } from 'primeng/dropdown';
+import { AvatarModule } from 'primeng/avatar';
+import { TagModule } from 'primeng/tag';
 const PRIMENG_MODULES = [
     CommonModule,
     DividerModule,
@@ -24,6 +27,9 @@ const PRIMENG_MODULES = [
     SelectButtonModule,
     InputNumberModule,
     InputTextModule,
+    DropdownModule,
+    AvatarModule,
+    TagModule,
 ];
 @NgModule({
     declarations: [],
