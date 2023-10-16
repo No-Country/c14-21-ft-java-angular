@@ -1,3 +1,87 @@
 .field {
     margin-bottom: 0 !important;
 }
+
+.login,.register{
+    width: 100%;
+
+    padding: 2rem 4rem;
+
+    @media(min-width:800px){
+        width: 48%;
+    }
+
+    @media(max-width:991px){
+        padding: 2rem;
+    }
+
+
+}
+
+
+// Dividers
+.vertical{
+    width: 4%;
+    @media(max-width:800px){
+        display: none;
+    }
+}
+
+.horizontal{
+    display: none;
+    @media(max-width:800px){
+        display: block;
+        width: 100%;
+    }
+}
+// FIN Dividers ------------
+
+.adress-resoume-container{
+    .adress-container {
+        order: 3;
+        width: 100%;
+
+        @media(min-width:950px){
+            width: 58%;
+            order: 1;
+        }
+
+        .grid{
+            padding: 2rem 4rem;
+        }
+    }
+
+    .vertical{
+        order: 2;
+        @media(max-width:949px){
+            display: none;
+        }
+
+    }
+    .horizontal{
+        order: 2;
+        @media(max-width:949px){
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .cart-resume-container{
+        order: 1;
+        padding: 2rem;
+
+        width: 100%;
+
+        @media(min-width:950px){
+            order: 3;
+            width: 38%;
+            padding: 2rem 1rem;
+        }
+
+    }
+
+}
+
+
+
+

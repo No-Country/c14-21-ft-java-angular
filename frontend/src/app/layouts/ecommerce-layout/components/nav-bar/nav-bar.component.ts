@@ -13,7 +13,7 @@ export class NavBarComponent {
     constructor(public router: Router, private dialogService: DialogService) {}
     onShowCart() {
         this.dialogService.open(ShoppingCartComponent, {
-            width: '70%',
+            styleClass:'cart-dialog'
         });
     }
 }

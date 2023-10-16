@@ -1,172 +1,133 @@
+
 <div class="row carousel-container">
-    <div class="container">
-        <div class="">
-            <p-carousel
-                [value]="products"
-                [numVisible]="1"
-                [numScroll]="1"
-                [circular]="false"
-            >
-                <ng-template let-product pTemplate="item">
-                    <!-- <div
-                                class="border-1 surface-border border-round m-2 text-center py-5 px-3"
-                            >
-                                <div class="mb-3">
+        <div class="container">
+                <p-carousel
+                    [value]="products"
+                    [numVisible]="1"
+                    [numScroll]="1"
+                    [circular]="false"
+                >
+                    <ng-template let-product pTemplate="item">
+                        <!-- Hero -->
+                        <div class="grid py-5 bg-black" id="hero">
+                            <div class="col-4">
+                                <div class="col-md-12 hero-img-container">
                                     <img
-                                        src="https://primefaces.org/cdn/primeng/images/demo/product/{{
-                                            product.image
-                                        }}"
-                                        [alt]="product.name"
-                                        class="w-6 shadow-2"
+                                        class="hero-img"
+                                        src="assets/ecommerce/products/home-product.jpg"
+                                        alt="{{ product.title }}"
                                     />
                                 </div>
-                                <div>
-                                    <h4 class="mb-1">{{ product.name }}</h4>
-                                    <h6 class="mt-0 mb-3">
-                                        {{ "$" + product.price }}
-                                    </h6>
-                                    <p-tag
-                                        [value]="product.inventoryStatus"
-                                        [severity]="
-                                            getSeverity(product.inventoryStatus)
-                                        "
-                                    ></p-tag>
-                                    <div class="car-buttons mt-5">
-                                        <p-button
-                                            type="button"
-                                            styleClass="p-button p-button-rounded mr-2"
-                                            icon="pi pi-search"
-                                        ></p-button>
-                                        <p-button
-                                            type="button"
-                                            styleClass="p-button-success p-button-rounded mr-2"
-                                            icon="pi pi-star-fill"
-                                        ></p-button>
-                                    </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="row">
+                                    <p class="product-title">
+                                        {{ product.title }}
+                                    </p>
                                 </div>
-
-                            </div> -->
-
-                    <!-- Hero -->
-                    <div class="grid py-5 bg-black" id="hero">
-                        <div class="col-4">
-                            <div class="col-md-12 hero-img-container">
-                                <img
-                                    class="hero-img"
-                                    src="assets/ecommerce/products/home-product.jpg"
-                                    alt="{{ product.title }}"
-                                />
-                            </div>
-                        </div>
-                        <div class="col-8">
-                            <div class="row">
-                                <p class="product-title">
-                                    {{ product.title }}
-                                </p>
-                            </div>
-                            <div class="row divider"></div>
-                            <div class="row">
-                                <p class="product-description col-10">
-                                    MATOA Way Kambas - This wood is chosen to
-                                    represent the Sumatran Rhino's skin which is
-                                    designed with an overlap effect on its strap
-                                    to represent Rhino's skin.
-                                </p>
-                            </div>
-                            <div class="row">
-                                <div class="flex button-container">
-                                    <div class="mr-3">
-                                        <button
-                                            pButton
-                                            pRipple
-                                            class="p-button-danger"
-                                            label="Add To Cart"
-                                            icon="pi pi-cart-plus"
-                                        ></button>
-                                    </div>
-                                    <div>
-                                        <button
-                                            pButton
-                                            pRipple
-                                            type="button"
-                                            label="Ver más"
-                                            class="p-button-outlined p-button-secondary"
-                                        ></button>
+                                <div class="row divider"></div>
+                                <div class="row">
+                                    <p class="product-description col-10">
+                                        MATOA Way Kambas - This wood is chosen to
+                                        represent the Sumatran Rhino's skin which is
+                                        designed with an overlap effect on its strap
+                                        to represent Rhino's skin.
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <div class="flex button-container">
+                                        <div class="mr-3">
+                                            <button
+                                                pButton
+                                                pRipple
+                                                class="p-button"
+                                                label="Add To Cart"
+                                                icon="pi pi-cart-plus"
+                                            ></button>
+                                        </div>
+                                        <div>
+                                            <button
+                                                pButton
+                                                pRipple
+                                                type="button"
+                                                label="Ver más"
+                                                class="p-button-outlined p-button-secondary"
+                                            ></button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Fin Hero -->
-                </ng-template>
-            </p-carousel>
-        </div>
-    </div>
+                        <!-- Fin Hero -->
+                    </ng-template>
+                </p-carousel>
+            </div>
 </div>
 
-<!-- Listado Categorias -->
+<!-- Categorias -->
 
-<div
-    *ngFor="let category of categories"
-    class="py-4 lg:px-4 mt-5 categories-container"
->
-    <div class="grid justify-content-center">
-        <div class="col-12 mb-2 pb-0 lg:mt-4 lg:mb-4">
-            <h2 class="text-900 font-normal category-name">
-                {{ category.title }}
-            </h2>
-            <hr class="w-1" />
-        </div>
+<div *ngFor="let category of categories"
+    class="py-4 mt-5 _categories-container _container">
 
-        <div class="grid">
-            <div
-                class="col-12 md:col-6 lg:col-3 p-3 mt-4 lg:mt-0 card-container"
-                *ngFor="let product of category.items"
-            >
-                <div>
-                    <div class="surface-card">
-                        <div
-                            class="flex align-items-center justify-content-center"
-                        >
-                            <img
-                                class="col-12"
-                                [src]="product.img"
-                                [alt]="product.title"
-                            />
-                        </div>
-                        <h5 class="mb-2 text-700">
-                            {{ product.title }}
-                        </h5>
-                        <span *ngIf="product.disscount"
-                            >{{ product.disscount | percent }} Off</span
-                        >
-                        <h5 class="text-800">
-                            {{ product.price | currency }}
-                        </h5>
+    <div class="col-12 mb-2 pb-0 lg:mt-4 lg:mb-4">
+        <h2 class="text-900 font-normal category-name">
+            {{ category.title }}
+        </h2>
+        <hr class="w-1" />
+    </div>
 
-                        <button
-                            pButton
-                            pRipple
-                            label="Add To Cart"
-                            class="p-button-danger"
-                            icon="pi pi-cart-plus"
-                        ></button>
+    <!-- Lista de productos  y Botón Ver todo-->
+    <div class="grid">
+        <div class="col-12 md:col-6 lg:col-3 p-3 mt-4 lg:mt-0 card-container"
+            *ngFor="let product of category.items">
+
+            <div>
+                <div class="surface-card _card">
+
+                    <div class="flex align-items-center justify-content-center">
+                        <img class="col-12"
+                            [src]="product.img"
+                            [alt]="product.title"
+                            routerLink="/ecommerce/product"/>
                     </div>
+
+                    <h5 class="mb-2 text-700 _card-title"
+                        routerLink="/ecommerce/product">
+                        {{ product.title }}
+                    </h5>
+
+                    <span *ngIf="product.disscount">
+                        {{ product.disscount | percent }} Off
+                    </span>
+
+                    <h5 class="text-800">
+                        {{ product.price | currency }}
+                    </h5>
+
+                    <button pButton
+                            pRipple
+                            label="Agregar al carrito"
+                            class="p-button"
+                            icon="pi pi-cart-plus">
+                    </button>
+
                 </div>
             </div>
         </div>
+    </div>
 
-        <div
-            class="flex align-items-center justify-content-center w-7 lg:w-3 md:w-5 mt-3"
-        >
-            <button
-                pButton
+    <div class="flex align-items-center justify-content-center w-7 lg:w-3 md:w-5 mt-3 mx-auto">
+        <button pButton
                 pRipple
                 type="button"
                 label="Ver todo"
-                class="p-button-outlined p-button-secondary w-full"
-            ></button>
-        </div>
+                class="p-button-outlined p-button-secondary w-full">
+        </button>
     </div>
+    <!-- Lista de productos FIN --------->
+
 </div>
+
+<!-- FIN Categorias -->
+

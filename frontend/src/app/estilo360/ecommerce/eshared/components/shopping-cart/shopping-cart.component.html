@@ -1,6 +1,8 @@
-<div>
-    <div class="flex flex-wrap">
-        <div class="col-2 hero-img-container">
+<div class="shopping-products">
+
+    <div class="grid product-container">
+
+        <div class="product-img">
             <img
                 width="100%"
                 class="hero-img"
@@ -8,7 +10,8 @@
                 alt=""
             />
         </div>
-        <div class="col-4">
+
+        <div class="product-info">
             <h5 class="font-serif">Product title</h5>
 
             <span class="line-through text-slate-950">$1,200.00</span> <br />
@@ -17,12 +20,13 @@
             <br />
             <span></span>
         </div>
-        <div class="flex col-2 align-self-center">
+
+        <div class="flex align-self-center justify-content-center product-buttons">
             <span class="p-buttonset">
                 <button
                     pButton
                     pRipple
-                    class="p-button-sm"
+                    class="p-button-sm p-button-outlined"
                     icon="pi pi-minus"
                 ></button>
                 <button
@@ -35,16 +39,17 @@
                 <button
                     pButton
                     pRipple
-                    class="p-button-sm"
+                    class="p-button-sm p-button-outlined"
                     icon="pi pi-plus"
                 ></button>
             </span>
         </div>
-        <div class="flex col-2 align-self-center justify-content-end">
+
+        <div class="flex align-self-center justify-content-end product-price">
             <span class="text-xl font-semibold">{{ "1200" | currency }}</span>
         </div>
 
-        <div class="flex col-2 align-self-center justify-content-center">
+        <div class="flex align-self-center justify-content-center product-delete-btn">
             <button
                 pButton
                 pRipple
@@ -56,8 +61,10 @@
         </div>
     </div>
 
-    <div class="flex flex-wrap">
-        <div class="col-2 hero-img-container">
+
+    <div class="grid product-container">
+
+        <div class="product-img">
             <img
                 width="100%"
                 class="hero-img"
@@ -65,7 +72,8 @@
                 alt=""
             />
         </div>
-        <div class="col-4">
+
+        <div class="product-info">
             <h5 class="font-serif">Product title</h5>
 
             <span class="line-through text-slate-950">$1,200.00</span> <br />
@@ -74,12 +82,13 @@
             <br />
             <span></span>
         </div>
-        <div class="flex col-2 align-self-center">
+
+        <div class="flex align-self-center justify-content-center product-buttons">
             <span class="p-buttonset">
                 <button
                     pButton
                     pRipple
-                    class="p-button-sm"
+                    class="p-button-sm p-button-outlined"
                     icon="pi pi-minus"
                 ></button>
                 <button
@@ -92,16 +101,17 @@
                 <button
                     pButton
                     pRipple
-                    class="p-button-sm"
+                    class="p-button-sm p-button-outlined"
                     icon="pi pi-plus"
                 ></button>
             </span>
         </div>
-        <div class="flex col-2 align-self-center justify-content-end">
+
+        <div class="flex align-self-center justify-content-end product-price">
             <span class="text-xl font-semibold">{{ "1200" | currency }}</span>
         </div>
 
-        <div class="flex col-2 align-self-center justify-content-center">
+        <div class="flex align-self-center justify-content-center product-delete-btn">
             <button
                 pButton
                 pRipple
@@ -112,10 +122,13 @@
             ></button>
         </div>
     </div>
+
 </div>
+
 <p-divider></p-divider>
-<div class="flex justify-content-end">
-    <div class="mr-5 pr-5">
+
+<div class="flex justify-content-end pb-3 mb-3 cart-total">
+    <div class="">
         <span>
             <span class="text-xl font-semibold"
                 >Total: {{ "1200" | currency }}</span
@@ -123,11 +136,12 @@
         >
     </div>
 </div>
-<div class="flex justify-content-center">
+
+<div class="flex justify-content-center purchase-btn">
     <button
         pButton
         pRipple
-        class="p-button-danger col-4"
+        class="p-button"
         label="Comprar Ahora"
     ></button>
 </div>

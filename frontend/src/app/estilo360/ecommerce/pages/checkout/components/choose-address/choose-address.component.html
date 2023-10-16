@@ -1,63 +1,63 @@
-<div class="card" *ngIf="!isLogged">
+<div class="card _container" *ngIf="!isLogged">
+
     <div class="grid">
-        <div
-            class="sm:col-12 md:col-5 flex align-items-center justify-content-center"
-        >
+
+        <div class="login">
             <app-checkout-login
                 (successLogin)="switchLogin()"
             ></app-checkout-login>
         </div>
-        <div class="sm:hidden sm:col-12 md:block md:col-2">
-            <p-divider layout="vertical"> </p-divider>
-        </div>
-        <div class="md:hidden col-12">
-            <p-divider> </p-divider>
-        </div>
-        <div
-            class="sm:col-12 md:col-5 flex align-items-center justify-content-center"
-        >
+
+        <p-divider class="vertical" layout="vertical"> </p-divider>
+        <p-divider class="horizontal"  layout="horizontal"> </p-divider>
+
+
+        <div class="register">
             <app-checkout-register
                 (successRegister)="switchLogin()"
             ></app-checkout-register>
         </div>
+
+
     </div>
 </div>
 
-<div class="card" *ngIf="isLogged">
-    <div class="grid">
-        <div class="md:col-7 sm:col-12">
+<div class="card _container" *ngIf="isLogged">
+
+    <div class="grid adress-resoume-container">
+        <div class="adress-container">
             <div class="p-fluid p-formgrid grid">
                 <h2 class="text-center">Datos de Envío</h2>
-                <div class="field sm:col-12 md:col-12">
+                <div class="field col-12 md:col-12">
                     <label>Calle</label>
                     <input pInputText type="text" />
                 </div>
 
-                <div class="field sm:col-12 md:col-6">
+                <div class="field col-12 md:col-6">
                     <label>Número Ext.</label>
                     <input pInputText type="number" />
                 </div>
-                <div class="field sm:col-12 md:col-6">
+                <div class="field col-12 md:col-6">
                     <label>Número Int.</label>
                     <input pInputText type="number" />
                 </div>
 
-                <div class="field sm:col-12 md:col-6">
+                <div class="field col-12 md:col-6">
                     <label htmlFor="state">Pais</label>
                     <p-dropdown [options]="[]" optionLabel="name"></p-dropdown>
                 </div>
 
-                <div class="field sm:col-12 md:col-6">
+                <div class="field col-12 md:col-6">
                     <label htmlFor="state">Estado</label>
                     <p-dropdown [options]="[]" optionLabel="name"></p-dropdown>
                 </div>
 
-                <div class="field sm:col-12 md:col-6">
+                <div class="field col-12 md:col-6">
                     <label htmlFor="state">Ciudad</label>
                     <p-dropdown [options]="[]" optionLabel="name"></p-dropdown>
                 </div>
 
-                <div class="field sm:col-12 md:col-6">
+                <div class="field col-12 md:col-6">
                     <label>Código Postal</label>
                     <input pInputText type="number" />
                 </div>
@@ -73,7 +73,11 @@
                 </div>
             </div>
         </div>
-        <div class="md:col-5 sm:col-12">
+
+        <p-divider class="vertical" layout="vertical"> </p-divider>
+        <p-divider class="horizontal"  layout="horizontal"> </p-divider>
+
+        <div class="cart-resume-container">
             <p-table [value]="cart" styleClass="p-datatable-gridlines">
                 <ng-template pTemplate="header">
                     <tr>

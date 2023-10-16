@@ -1,7 +1,9 @@
 <div class="container mx-auto">
-    <div><h2 class="text-center">Confirma tu Compra</h2></div>
-    <div class="card">
+
+    <div class="steps-container py-4 mb-4">
+        <h2 class="text-center mt-5 text-4xl">Confirma tu Compra</h2>
         <p-steps [model]="items" [readonly]="true"></p-steps>
     </div>
+
     <router-outlet></router-outlet>
 </div>
