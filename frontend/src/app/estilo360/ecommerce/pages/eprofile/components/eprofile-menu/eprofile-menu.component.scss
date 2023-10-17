@@ -7,3 +7,52 @@
     width: 100%;
     border-radius: 50%;
 }
+
+.profile-menu{
+    .profile-options{
+        padding: 2rem 1rem;
+        width: 25%;
+        @media(max-width:992px){
+            width: 30%;
+        }
+        @media(max-width:778px){
+            width: 100%;
+            padding: 1rem;
+        }
+    }
+
+    .horizontal{
+        display: none;
+
+        @media(max-width:778px){
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .vertical{
+        width: 5%;
+        @media(max-width:778px){
+            display: none;
+        }
+    }
+
+    .profile-content{
+        width: 70%;
+        padding: 2rem 4rem;
+
+        @media(max-width:992px){
+            width: 65%;
+            padding: 2rem;
+        }
+        @media(max-width:778px){
+            width: 100%;
+            padding: 1rem;
+        }
+        @media(max-width:480px){
+            width: 100%;
+            padding: 0;
+        }
+    }
+
+}
