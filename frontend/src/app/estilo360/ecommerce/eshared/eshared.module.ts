@@ -1,27 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
-import { StyleClassModule } from 'primeng/styleclass';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { InputNumberModule } from 'primeng/inputnumber';
-import { InputMaskModule } from 'primeng/inputmask';
-import { InputTextModule } from 'primeng/inputtext';
-import { ButtonModule } from 'primeng/button';
-import { DividerModule } from 'primeng/divider';
+import { CategoryContainerComponent } from './components/category-container/category-container.component';
+import { CategoryProductComponent } from './components/category-product/category-product.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
-    declarations: [ShoppingCartComponent],
-    imports: [
-        CommonModule,
-        StyleClassModule,
-        FormsModule,
-        ReactiveFormsModule,
-        InputMaskModule,
-        InputNumberModule,
-        InputTextModule,
-        ButtonModule,
-        DividerModule,
+    declarations: [
+        ShoppingCartComponent,
+        CategoryContainerComponent,
+        CategoryProductComponent,
     ],
-    exports: [ShoppingCartComponent, InputNumberModule, InputTextModule],
+    imports: [CommonModule, SharedModule],
+    exports: [
+        ShoppingCartComponent,
+        CategoryContainerComponent,
+        CategoryProductComponent,
+    ],
 })
 export class EsharedModule {}

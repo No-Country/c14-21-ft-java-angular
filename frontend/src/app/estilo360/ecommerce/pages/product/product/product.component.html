@@ -1,175 +1,126 @@
 <div class="product-container _container">
+    <div class="flex justify-content-center px-0 mx-0 product-gallery-price">
+        <div class="product-gallery">
+            <p-galleria
+                class="col-12"
+                [(value)]="images"
+                [thumbnailsPosition]="thumbnailsPosition"
+                [responsiveOptions]="responsiveOptions"
+                [containerStyle]="{ 'max-width': '640px' }"
+            >
+                <ng-template pTemplate="item" let-item>
+                    <img
+                        [src]="item.src"
+                        style="width: 100%; display: block"
+                        class="main-img"
+                    />
+                </ng-template>
+                <ng-template pTemplate="thumbnail" let-item>
+                    <div
+                        class="grid grid-nogutter justify-content-center gallery"
+                    >
+                        <img [src]="item.thumbnail" style="display: block" />
+                    </div>
+                </ng-template>
+            </p-galleria>
+        </div>
 
-        <div class="flex justify-content-center px-0 mx-0 product-gallery-price">
-            <div class="product-gallery">
-                <p-galleria
-                    class="col-12"
-                    [(value)]="images"
-                    [thumbnailsPosition]="thumbnailsPosition"
-                    [responsiveOptions]="responsiveOptions"
-                    [containerStyle]="{ 'max-width': '640px' }"
+        <div class="flex align-self-center p-2 lg:p-5 lg:m-5 product-info">
+            <div>
+                <h1 class="text-700 text-9xl">WAY KANBAS MINI EBONY</h1>
 
-                >
-                    <ng-template pTemplate="item" let-item  >
-                        <img [src]="item.src" style="width: 100%; display: block;" class="main-img"/>
-                    </ng-template>
-                    <ng-template pTemplate="thumbnail" let-item>
-                        <div class="grid grid-nogutter justify-content-center gallery">
-                            <img [src]="item.thumbnail" style="display: block;"/>
-                        </div>
-                    </ng-template>
-                </p-galleria>
-            </div>
+                <p class="text-xl line-through">{{ 1255 | currency }}</p>
 
-            <div class="flex align-self-center p-2  lg:p-5 lg:m-5 product-info">
-                <div>
-                    <h1 class="text-700 text-9xl">WAY KANBAS MINI EBONY</h1>
+                <p class="text-3xl">{{ 1255 | currency }}</p>
 
-                    <p class="text-xl line-through">{{ 1255 | currency }}</p>
-
-                    <p class="text-3xl">{{ 1255 | currency }}</p>
-
-                    <p class="mb-1">Choose Size</p>
-                    <div class="mb-3">
-                        <p-selectButton
+                <p class="mb-1">Choose Size</p>
+                <div class="mb-3">
+                    <p-selectButton
                         class=""
                         [options]="sizeOpions"
                         optionLabel="label"
                         optionValue="value"
-                    ></p-selectButton></div>
-
-                    <div class="w-full mb-3">
-                        <span class="p-buttonset">
-                            <button
-                                pButton
-                                pRipple
-                                class="p-button-outlined p-button-sm"
-                                icon="pi pi-minus"
-                            ></button>
-                            <button
-                                pButton
-                                pRipple
-                                class="p-button-sm"
-                                disabled
-                                label="1"
-                            ></button>
-                            <button
-                                pButton
-                                pRipple
-                                class="p-button-outlined p-button-sm"
-                                icon="pi pi-plus"
-                            ></button>
-                        </span>
-                    </div>
-
-                    <div class="flex column-gap-3 row-gap-3">
-                        <div>
-                            <button
-                                pButton
-                                pRipple
-                                class="p-button add-to-cart-btn"
-                                label="Agregar al Carrito"
-                                icon="pi pi-cart-plus"
-                            ></button>
-                        </div>
-
-                        <div>
-                            <button
-                                pButton
-                                pRipple
-                                type="button"
-                                label="Comprar Ahora"
-                                class="p-button-outlined p-button-secondary buy-now-btn"
-                            ></button>
-                        </div>
-                    </div>
+                    ></p-selectButton>
                 </div>
-            </div>
-        </div>
 
-        <div class="py-4 px-2 lg:px-4 mt-5 ">
-            <h3 class="pt-2">Descripción</h3>
-            <p-divider></p-divider>
-            <p class="text-xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-                quidem labore reiciendis magnam, sunt officia ut provident ipsum
-                adipisci totam reprehenderit facilis esse! Libero officia nihil neque
-                doloremque, magni voluptatum. Deleniti dolores nobis quas placeat aut
-                magnam, accusamus provident eius ex illum reiciendis ab, nisi molestias.
-                Obcaecati quas eveniet nisi necessitatibus dignissimos quaerat atque.
-                Laudantium animi ratione atque nobis distinctio. Blanditiis, magnam.
-                Optio nulla dicta accusantium rem praesentium facere fugiat neque
-                voluptate numquam voluptatem debitis exercitationem corporis quasi velit
-                corrupti eveniet ab, commodi vitae voluptatum sunt nam atque esse
-                aliquam! Placeat totam harum delectus architecto nostrum corrupti non
-                suscipit in? Voluptatum, dolore similique? Sit culpa similique
-                reiciendis odio fugit a voluptatibus quaerat quia hic, dolorem, earum
-                neque est, sunt accusantium. Aut vitae inventore voluptatibus pariatur
-                magnam tempora dolore. Minima nam voluptate id, voluptatem, asperiores
-                error a beatae culpa est laboriosam tenetur blanditiis architecto
-                ratione amet, quos esse rem itaque odio!
-            </p>
-        </div>
+                <div class="w-full mb-3">
+                    <span class="p-buttonset">
+                        <button
+                            pButton
+                            pRipple
+                            class="p-button-outlined p-button-sm"
+                            icon="pi pi-minus"
+                        ></button>
+                        <button
+                            pButton
+                            pRipple
+                            class="p-button-sm"
+                            disabled
+                            label="1"
+                        ></button>
+                        <button
+                            pButton
+                            pRipple
+                            class="p-button-outlined p-button-sm"
+                            icon="pi pi-plus"
+                        ></button>
+                    </span>
+                </div>
 
-        <div *ngFor="let category of   categories"
-            class="py-4 lg:px-4 mt-2 _categories-container">
-
-            <div class="col-12 mb-2 pb-0 lg:mt-4 lg:mb-4">
-
-                <h2 class="text-900 font-normal category-name">
-                    {{ category.title }}
-                </h2>
-
-                <hr class="w-1" />
-            </div>
-
-            <!-- Lista de productos  y Botón Ver todo-->
-            <div class="grid">
-                <div *ngFor="let product of category.items"
-                    class="col-12 md:col-6 lg:col-3 p-3 mt-4 lg:mt-0 card-container">
+                <div class="flex column-gap-3 row-gap-3">
                     <div>
-                        <div class="surface-card _card">
-                            <div class="flex align-items-center justify-content-center">
+                        <button
+                            pButton
+                            pRipple
+                            class="p-button add-to-cart-btn"
+                            label="Agregar al Carrito"
+                            icon="pi pi-cart-plus"
+                        ></button>
+                    </div>
 
-                                <img class="col-12"
-                                    [src]="product.img"
-                                    [alt]="product.title"/>
-
-                            </div>
-
-                            <h5 class="mb-2 text-700 _card-title">
-                                {{ product.title }}
-                            </h5>
-
-                            <span *ngIf="product.disscount">
-                                {{ product.disscount | percent }} Off
-                            </span>
-
-                            <h5 class="text-800">
-                                {{ product.price | currency }}
-                            </h5>
-
-                            <button pButton
-                                    pRipple
-                                    label="Agregar al carrito"
-                                    class="p-button"
-                                    icon="pi pi-cart-plus">
-                            </button>
-                        </div>
+                    <div>
+                        <button
+                            pButton
+                            pRipple
+                            type="button"
+                            label="Comprar Ahora"
+                            class="p-button-outlined p-button-secondary buy-now-btn"
+                        ></button>
                     </div>
                 </div>
             </div>
-
-            <div class="flex align-items-center justify-content-center w-7 lg:w-3 md:w-5 mt-3 mx-auto">
-                <button pButton
-                        pRipple
-                        type="button"
-                        label="Ver todo"
-                        class="p-button-outlined p-button-secondary w-full">
-                </button>
-            </div>
-
         </div>
+    </div>
 
+    <div class="py-4 px-2 lg:px-4 mt-5">
+        <h3 class="pt-2">Descripción</h3>
+        <p-divider></p-divider>
+        <p class="text-xl">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+            quidem labore reiciendis magnam, sunt officia ut provident ipsum
+            adipisci totam reprehenderit facilis esse! Libero officia nihil
+            neque doloremque, magni voluptatum. Deleniti dolores nobis quas
+            placeat aut magnam, accusamus provident eius ex illum reiciendis ab,
+            nisi molestias. Obcaecati quas eveniet nisi necessitatibus
+            dignissimos quaerat atque. Laudantium animi ratione atque nobis
+            distinctio. Blanditiis, magnam. Optio nulla dicta accusantium rem
+            praesentium facere fugiat neque voluptate numquam voluptatem debitis
+            exercitationem corporis quasi velit corrupti eveniet ab, commodi
+            vitae voluptatum sunt nam atque esse aliquam! Placeat totam harum
+            delectus architecto nostrum corrupti non suscipit in? Voluptatum,
+            dolore similique? Sit culpa similique reiciendis odio fugit a
+            voluptatibus quaerat quia hic, dolorem, earum neque est, sunt
+            accusantium. Aut vitae inventore voluptatibus pariatur magnam
+            tempora dolore. Minima nam voluptate id, voluptatem, asperiores
+            error a beatae culpa est laboriosam tenetur blanditiis architecto
+            ratione amet, quos esse rem itaque odio!
+        </p>
+    </div>
+
+    <div
+        *ngFor="let category of categories"
+        class="py-4 lg:px-4 mt-2 _categories-container"
+    >
+        <app-category-container [category]="category"></app-category-container>
+    </div>
 </div>
-

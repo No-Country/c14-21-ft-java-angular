@@ -1,133 +1,74 @@
-
 <div class="row carousel-container">
-        <div class="container">
-                <p-carousel
-                    [value]="products"
-                    [numVisible]="1"
-                    [numScroll]="1"
-                    [circular]="false"
-                >
-                    <ng-template let-product pTemplate="item">
-                        <!-- Hero -->
-                        <div class="grid py-5 bg-black" id="hero">
-                            <div class="col-4">
-                                <div class="col-md-12 hero-img-container">
-                                    <img
-                                        class="hero-img"
-                                        src="assets/ecommerce/products/home-product.jpg"
-                                        alt="{{ product.title }}"
-                                    />
+    <div class="container">
+        <p-carousel
+            [value]="products"
+            [numVisible]="1"
+            [numScroll]="1"
+            [circular]="false"
+        >
+            <ng-template let-product pTemplate="item">
+                <!-- Hero -->
+                <div class="grid py-5 bg-black" id="hero">
+                    <div class="col-4">
+                        <div class="col-md-12 hero-img-container">
+                            <img
+                                class="hero-img"
+                                src="assets/ecommerce/products/home-product.jpg"
+                                alt="{{ product.title }}"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="row">
+                            <p class="product-title">
+                                {{ product.title }}
+                            </p>
+                        </div>
+                        <div class="row divider"></div>
+                        <div class="row">
+                            <p class="product-description col-10">
+                                MATOA Way Kambas - This wood is chosen to
+                                represent the Sumatran Rhino's skin which is
+                                designed with an overlap effect on its strap to
+                                represent Rhino's skin.
+                            </p>
+                        </div>
+                        <div class="row">
+                            <div class="flex button-container">
+                                <div class="mr-3">
+                                    <button
+                                        pButton
+                                        pRipple
+                                        class="p-button"
+                                        label="Add To Cart"
+                                        icon="pi pi-cart-plus"
+                                    ></button>
                                 </div>
-                            </div>
-                            <div class="col-8">
-                                <div class="row">
-                                    <p class="product-title">
-                                        {{ product.title }}
-                                    </p>
-                                </div>
-                                <div class="row divider"></div>
-                                <div class="row">
-                                    <p class="product-description col-10">
-                                        MATOA Way Kambas - This wood is chosen to
-                                        represent the Sumatran Rhino's skin which is
-                                        designed with an overlap effect on its strap
-                                        to represent Rhino's skin.
-                                    </p>
-                                </div>
-                                <div class="row">
-                                    <div class="flex button-container">
-                                        <div class="mr-3">
-                                            <button
-                                                pButton
-                                                pRipple
-                                                class="p-button"
-                                                label="Add To Cart"
-                                                icon="pi pi-cart-plus"
-                                            ></button>
-                                        </div>
-                                        <div>
-                                            <button
-                                                pButton
-                                                pRipple
-                                                type="button"
-                                                label="Ver más"
-                                                class="p-button-outlined p-button-secondary"
-                                            ></button>
-                                        </div>
-                                    </div>
+                                <div>
+                                    <button
+                                        pButton
+                                        pRipple
+                                        type="button"
+                                        label="Ver más"
+                                        class="p-button-outlined p-button-secondary"
+                                    ></button>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Fin Hero -->
-                    </ng-template>
-                </p-carousel>
-            </div>
+                <!-- Fin Hero -->
+            </ng-template>
+        </p-carousel>
+    </div>
 </div>
 
 <!-- Categorias -->
 
-<div *ngFor="let category of categories"
-    class="py-4 mt-5 _categories-container _container">
-
-    <div class="col-12 mb-2 pb-0 lg:mt-4 lg:mb-4">
-        <h2 class="text-900 font-normal category-name">
-            {{ category.title }}
-        </h2>
-        <hr class="w-1" />
-    </div>
-
-    <!-- Lista de productos  y Botón Ver todo-->
-    <div class="grid">
-        <div class="col-12 md:col-6 lg:col-3 p-3 mt-4 lg:mt-0 card-container"
-            *ngFor="let product of category.items">
-
-            <div>
-                <div class="surface-card _card">
-
-                    <div class="flex align-items-center justify-content-center">
-                        <img class="col-12"
-                            [src]="product.img"
-                            [alt]="product.title"
-                            routerLink="/ecommerce/product"/>
-                    </div>
-
-                    <h5 class="mb-2 text-700 _card-title"
-                        routerLink="/ecommerce/product">
-                        {{ product.title }}
-                    </h5>
-
-                    <span *ngIf="product.disscount">
-                        {{ product.disscount | percent }} Off
-                    </span>
-
-                    <h5 class="text-800">
-                        {{ product.price | currency }}
-                    </h5>
-
-                    <button pButton
-                            pRipple
-                            label="Agregar al carrito"
-                            class="p-button"
-                            icon="pi pi-cart-plus">
-                    </button>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="flex align-items-center justify-content-center w-7 lg:w-3 md:w-5 mt-3 mx-auto">
-        <button pButton
-                pRipple
-                type="button"
-                label="Ver todo"
-                class="p-button-outlined p-button-secondary w-full">
-        </button>
-    </div>
-    <!-- Lista de productos FIN --------->
-
+<div
+    *ngFor="let category of categories"
+    class="py-4 mt-5 _categories-container _container"
+>
+    <app-category-container [category]="category"></app-category-container>
 </div>
-
-<!-- FIN Categorias -->
-
