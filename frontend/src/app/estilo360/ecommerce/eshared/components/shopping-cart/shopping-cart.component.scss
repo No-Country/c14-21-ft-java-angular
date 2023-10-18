@@ -1,0 +1,113 @@
+.shopping-products{
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    padding: 1rem 4rem;
+
+
+    @media(max-width:950px){
+        padding: 1rem;
+    }
+
+    .product-container{
+        width: 100%;
+        column-gap: 2%;
+        row-gap: 1rem;
+
+        @media(max-width:776px){
+            margin: 0 auto;
+        }
+
+        .product-img{
+            align-self: center;
+            width: 14%;
+
+            @media(max-width:776px){
+                order:1;
+                width: 28%;
+            }
+        }
+
+        .product-info{
+            padding: 1rem;
+            width: 40%;
+            @media(max-width:776px){
+                order:2;
+                width: 58%;
+            }
+
+            h5{
+                @media(max-width:776px){
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        .product-buttons{
+            width: 24%;
+            @media(max-width:776px){
+                order:4;
+                width: 78%;
+                justify-content: flex-end !important;
+            }
+            @media(max-width:540px){
+                order:4;
+                width: 68%;
+                justify-content: flex-end !important;
+            }
+        }
+
+        .product-price{
+            width: 9%;
+            @media(max-width:776px){
+                order:5;
+                width: 18%;
+            }
+            @media(max-width:540px){
+                order:5;
+                width: 30%;
+            }
+        }
+
+        .product-delete-btn{
+            width: 5%;
+
+            @media(max-width:776px){
+                order:3;
+                width: 10%;
+            }
+
+            button{
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+
+
+    }
+
+
+
+}
+
+.cart-total{
+    padding: 0 5rem;
+
+    @media(max-width:950px){
+
+        padding: 0 2rem;
+    }
+}
+
+.purchase-btn{
+
+    button{
+        width: 40%;
+
+        @media(max-width:510px){
+            width: 80%;
+        }
+    }
+
+}

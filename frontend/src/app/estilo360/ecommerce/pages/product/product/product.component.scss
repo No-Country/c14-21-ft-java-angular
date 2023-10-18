@@ -1,12 +1,43 @@
-.container {
-    margin: 0;
-    padding: 0;
 
-    @media (max-width: 800px) {
-        margin: 0;
-        padding: 0;
+.product-gallery-price{
+    @media(max-width:915px){
+        flex-direction: column;
     }
+
+    .product-carousel ::ng-deep .p-galleria{
+        margin: 0 auto;
+
+
+
+        @media(max-width:894){
+            width: 50%;
+        }
+        @media(max-width:500px){
+            width: 90%;
+        }
+        @media(max-width:388px){
+            width: 78
+        }
+    }
+
+    .product-info{
+        @media(max-width:1120px){
+            padding: 2rem 1rem !important;
+        }
+
+        .add-to-cart-btn{
+            min-width: 176px;
+        }
+        .buy-now-btn{
+            min-width: 139px;
+        }
+
+    }
+
+
 }
+
+
 
 .categories-container {
     margin: 0 auto;

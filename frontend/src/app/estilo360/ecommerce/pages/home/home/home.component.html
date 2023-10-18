@@ -1,76 +1,74 @@
 <div class="row carousel-container">
     <div class="container">
-        <div class="">
-            <p-carousel
-                [value]="products"
-                [numVisible]="1"
-                [numScroll]="1"
-                [circular]="false"
-            >
-                <ng-template let-product pTemplate="item">
-                    <!-- Hero -->
-                    <div class="grid py-5 bg-black" id="hero">
-                        <div class="col-4">
-                            <div class="col-md-12 hero-img-container">
-                                <img
-                                    class="hero-img"
-                                    src="assets/ecommerce/products/home-product.jpg"
-                                    alt="{{ product.title }}"
-                                />
-                            </div>
+        <p-carousel
+            [value]="products"
+            [numVisible]="1"
+            [numScroll]="1"
+            [circular]="false"
+        >
+            <ng-template let-product pTemplate="item">
+                <!-- Hero -->
+                <div class="grid py-5 bg-black" id="hero">
+                    <div class="col-4">
+                        <div class="col-md-12 hero-img-container">
+                            <img
+                                class="hero-img"
+                                src="assets/ecommerce/products/home-product.jpg"
+                                alt="{{ product.title }}"
+                            />
                         </div>
-                        <div class="col-8">
-                            <div class="row">
-                                <p class="product-title">
-                                    {{ product.title }}
-                                </p>
-                            </div>
-                            <div class="row divider"></div>
-                            <div class="row">
-                                <p class="product-description col-10">
-                                    MATOA Way Kambas - This wood is chosen to
-                                    represent the Sumatran Rhino's skin which is
-                                    designed with an overlap effect on its strap
-                                    to represent Rhino's skin.
-                                </p>
-                            </div>
-                            <div class="row">
-                                <div class="flex button-container">
-                                    <div class="mr-3">
-                                        <button
-                                            pButton
-                                            pRipple
-                                            class="p-button-danger"
-                                            label="Add To Cart"
-                                            icon="pi pi-cart-plus"
-                                        ></button>
-                                    </div>
-                                    <div>
-                                        <button
-                                            pButton
-                                            pRipple
-                                            type="button"
-                                            label="Ver más"
-                                            class="p-button-outlined p-button-secondary"
-                                        ></button>
-                                    </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="row">
+                            <p class="product-title">
+                                {{ product.title }}
+                            </p>
+                        </div>
+                        <div class="row divider"></div>
+                        <div class="row">
+                            <p class="product-description col-10">
+                                MATOA Way Kambas - This wood is chosen to
+                                represent the Sumatran Rhino's skin which is
+                                designed with an overlap effect on its strap to
+                                represent Rhino's skin.
+                            </p>
+                        </div>
+                        <div class="row">
+                            <div class="flex button-container">
+                                <div class="mr-3">
+                                    <button
+                                        pButton
+                                        pRipple
+                                        class="p-button"
+                                        label="Add To Cart"
+                                        icon="pi pi-cart-plus"
+                                    ></button>
+                                </div>
+                                <div>
+                                    <button
+                                        pButton
+                                        pRipple
+                                        type="button"
+                                        label="Ver más"
+                                        class="p-button-outlined p-button-secondary"
+                                    ></button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Fin Hero -->
-                </ng-template>
-            </p-carousel>
-        </div>
+                <!-- Fin Hero -->
+            </ng-template>
+        </p-carousel>
     </div>
 </div>
 
-<!-- Listado Categorias -->
+<!-- Categorias -->
 
 <div
     *ngFor="let category of categories"
-    class="py-4 lg:px-4 mt-5 categories-container"
+    class="py-4 mt-5 _categories-container _container"
 >
     <app-category-container [category]="category"></app-category-container>
 </div>

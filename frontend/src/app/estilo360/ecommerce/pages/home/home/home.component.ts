@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DialogService } from 'primeng/dynamicdialog';
 import { ShoppingCartComponent } from '../../../eshared/components/shopping-cart/shopping-cart.component';
+import {Carousel} from 'primeng/carousel'
 
 @Component({
     selector: 'app-home',
@@ -112,7 +113,9 @@ export class HomeComponent {
             ],
         },
     ];
-    constructor(public router: Router, private dialogService: DialogService) {}
+    constructor(public router: Router, private dialogService: DialogService) {
+        Carousel.prototype.onTouchMove = () =>{}
+    }
 
     onShowCart() {
         this.dialogService.open(ShoppingCartComponent, {

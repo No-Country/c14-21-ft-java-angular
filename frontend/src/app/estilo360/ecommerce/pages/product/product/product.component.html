@@ -1,46 +1,54 @@
-<div class="flex px-0 mx-0">
-    <div class="">
-        <p-galleria
-            class="col-12"
-            [(value)]="images"
-            [thumbnailsPosition]="'left'"
-            [numVisible]="4"
-        >
-            <ng-template pTemplate="item" let-item>
-                <img [src]="item.src" />
-            </ng-template>
-            <ng-template pTemplate="thumbnail" let-item>
-                <div class="grid grid-nogutter justify-content-center">
-                    <img [src]="item.thumbnail" />
+<div class="product-container _container">
+    <div class="flex justify-content-center px-0 mx-0 product-gallery-price">
+        <div class="product-gallery">
+            <p-galleria
+                class="col-12"
+                [(value)]="images"
+                [thumbnailsPosition]="thumbnailsPosition"
+                [responsiveOptions]="responsiveOptions"
+                [containerStyle]="{ 'max-width': '640px' }"
+            >
+                <ng-template pTemplate="item" let-item>
+                    <img
+                        [src]="item.src"
+                        style="width: 100%; display: block"
+                        class="main-img"
+                    />
+                </ng-template>
+                <ng-template pTemplate="thumbnail" let-item>
+                    <div
+                        class="grid grid-nogutter justify-content-center gallery"
+                    >
+                        <img [src]="item.thumbnail" style="display: block" />
+                    </div>
+                </ng-template>
+            </p-galleria>
+        </div>
+
+        <div class="flex align-self-center p-2 lg:p-5 lg:m-5 product-info">
+            <div>
+                <h1 class="text-700 text-9xl">WAY KANBAS MINI EBONY</h1>
+
+                <p class="text-xl line-through">{{ 1255 | currency }}</p>
+
+                <p class="text-3xl">{{ 1255 | currency }}</p>
+
+                <p class="mb-1">Choose Size</p>
+                <div class="mb-3">
+                    <p-selectButton
+                        class=""
+                        [options]="sizeOpions"
+                        optionLabel="label"
+                        optionValue="value"
+                    ></p-selectButton>
                 </div>
-            </ng-template>
-        </p-galleria>
-    </div>
-    <div class="flex align-self-center p-5 m-5">
-        <div>
-            <h1 class="text-700 text-9xl">WAY KANBAS MINI EBONY</h1>
 
-            <p class="text-xl line-through">{{ 1255 | currency }}</p>
-
-            <p class="text-3xl">{{ 1255 | currency }}</p>
-
-            <p>
-                Choose Size <br />
-                <p-selectButton
-                    class="mt-2"
-                    [options]="sizeOpions"
-                    optionLabel="label"
-                    optionValue="value"
-                ></p-selectButton>
-            </p>
-
-            <div class="flex justify-between">
-                <div>
+                <div class="w-full mb-3">
                     <span class="p-buttonset">
                         <button
                             pButton
                             pRipple
-                            class="p-button-sm"
+                            class="p-button-outlined p-button-sm"
                             icon="pi pi-minus"
                         ></button>
                         <button
@@ -53,61 +61,66 @@
                         <button
                             pButton
                             pRipple
-                            class="p-button-sm"
+                            class="p-button-outlined p-button-sm"
                             icon="pi pi-plus"
                         ></button>
                     </span>
                 </div>
-                <div>
-                    <button
-                        pButton
-                        pRipple
-                        class="p-button-danger"
-                        label="Agregar al Carrito"
-                        icon="pi pi-cart-plus"
-                    ></button>
-                </div>
-                <div>
-                    <button
-                        pButton
-                        pRipple
-                        type="button"
-                        label="Comprar Ahora"
-                        class="p-button-outlined p-button-secondary w-full"
-                    ></button>
+
+                <div class="flex column-gap-3 row-gap-3">
+                    <div>
+                        <button
+                            pButton
+                            pRipple
+                            class="p-button add-to-cart-btn"
+                            label="Agregar al Carrito"
+                            icon="pi pi-cart-plus"
+                        ></button>
+                    </div>
+
+                    <div>
+                        <button
+                            pButton
+                            pRipple
+                            type="button"
+                            label="Comprar Ahora"
+                            class="p-button-outlined p-button-secondary buy-now-btn"
+                        ></button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="py-4 lg:px-4 mt-5 categories-container">
-    <h3 class="pt-2">Descripción</h3>
-    <p-divider></p-divider>
-    <p class="text-xl">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-        quidem labore reiciendis magnam, sunt officia ut provident ipsum
-        adipisci totam reprehenderit facilis esse! Libero officia nihil neque
-        doloremque, magni voluptatum. Deleniti dolores nobis quas placeat aut
-        magnam, accusamus provident eius ex illum reiciendis ab, nisi molestias.
-        Obcaecati quas eveniet nisi necessitatibus dignissimos quaerat atque.
-        Laudantium animi ratione atque nobis distinctio. Blanditiis, magnam.
-        Optio nulla dicta accusantium rem praesentium facere fugiat neque
-        voluptate numquam voluptatem debitis exercitationem corporis quasi velit
-        corrupti eveniet ab, commodi vitae voluptatum sunt nam atque esse
-        aliquam! Placeat totam harum delectus architecto nostrum corrupti non
-        suscipit in? Voluptatum, dolore similique? Sit culpa similique
-        reiciendis odio fugit a voluptatibus quaerat quia hic, dolorem, earum
-        neque est, sunt accusantium. Aut vitae inventore voluptatibus pariatur
-        magnam tempora dolore. Minima nam voluptate id, voluptatem, asperiores
-        error a beatae culpa est laboriosam tenetur blanditiis architecto
-        ratione amet, quos esse rem itaque odio!
-    </p>
-</div>
+    <div class="py-4 px-2 lg:px-4 mt-5">
+        <h3 class="pt-2">Descripción</h3>
+        <p-divider></p-divider>
+        <p class="text-xl">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+            quidem labore reiciendis magnam, sunt officia ut provident ipsum
+            adipisci totam reprehenderit facilis esse! Libero officia nihil
+            neque doloremque, magni voluptatum. Deleniti dolores nobis quas
+            placeat aut magnam, accusamus provident eius ex illum reiciendis ab,
+            nisi molestias. Obcaecati quas eveniet nisi necessitatibus
+            dignissimos quaerat atque. Laudantium animi ratione atque nobis
+            distinctio. Blanditiis, magnam. Optio nulla dicta accusantium rem
+            praesentium facere fugiat neque voluptate numquam voluptatem debitis
+            exercitationem corporis quasi velit corrupti eveniet ab, commodi
+            vitae voluptatum sunt nam atque esse aliquam! Placeat totam harum
+            delectus architecto nostrum corrupti non suscipit in? Voluptatum,
+            dolore similique? Sit culpa similique reiciendis odio fugit a
+            voluptatibus quaerat quia hic, dolorem, earum neque est, sunt
+            accusantium. Aut vitae inventore voluptatibus pariatur magnam
+            tempora dolore. Minima nam voluptate id, voluptatem, asperiores
+            error a beatae culpa est laboriosam tenetur blanditiis architecto
+            ratione amet, quos esse rem itaque odio!
+        </p>
+    </div>
 
-<div
-    *ngFor="let category of categories"
-    class="py-4 lg:px-4 mt-5 categories-container"
->
-    <app-category-container [category]="category"></app-category-container>
+    <div
+        *ngFor="let category of categories"
+        class="py-4 lg:px-4 mt-2 _categories-container"
+    >
+        <app-category-container [category]="category"></app-category-container>
+    </div>
 </div>

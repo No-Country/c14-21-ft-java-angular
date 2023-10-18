@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-product',
     templateUrl: './product.component.html',
     styleUrls: ['./product.component.scss'],
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit {
     images = [
         {
             src: 'assets/ecommerce/products/product.jpg',
@@ -31,6 +31,21 @@ export class ProductComponent {
             src: 'assets/ecommerce/products/product.jpg',
             thumbnail: 'assets/ecommerce/products/thumbail.png',
         },
+    ];
+
+    responsiveOptions: any[] = [
+        {
+            breakpoint: '1024px',
+            numVisible: 3
+        },
+        {
+            breakpoint: '768px',
+            numVisible: 3
+        },
+        {
+            breakpoint: '560px',
+            numVisible: 2
+        }
     ];
 
     sizeOpions = [
@@ -70,4 +85,27 @@ export class ProductComponent {
             ],
         },
     ];
+
+    thumbnailsPosition: string = 'left';
+
+    ngOnInit(): void {
+        this.resizeThumnails();
+    }
+
+
+    resizeThumnails(){
+        if (window.innerWidth < 1035) {
+            this.thumbnailsPosition = 'bottom';
+        } else {
+            this.thumbnailsPosition = 'left';
+        }
+        // Detecta el tamaño de la pantalla y ajusta thumbnailsPosition
+        window.addEventListener('resize', () => {
+            if (window.innerWidth < 1035) {
+                this.thumbnailsPosition = 'bottom';
+            } else {
+                this.thumbnailsPosition = 'left';
+            }
+        });
+    }
 }
