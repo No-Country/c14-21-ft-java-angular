@@ -26,3 +26,182 @@ body {
     background-color: #4f46e5 !important;
     color: white !important;
 }
+
+$divider-color: --text-color;
+
+// Carrusel
+#home {
+    background-color: #f7f6f4;
+
+    .carousel-container {
+        margin: 0 2rem;
+        padding: 0 2rem;
+
+        @media (max-width: 800px) {
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+#hero {
+    background: linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.2),
+            rgba(255, 255, 255, 0.2)
+        ),
+        radial-gradient(
+            77.36% 256.97% at 77.36% 57.52%,
+            #eeefaf 0%,
+            #c3e3fa 100%
+        );
+    clip-path: ellipse(150% 87% at 93% 13%);
+    margin: 0 !important;
+    @media (max-width: 800px) {
+        flex-direction: column !important;
+    }
+
+    .col-4 {
+        @media (max-width: 800px) {
+            width: 100% !important;
+            padding-top: 0;
+            order: 2;
+        }
+    }
+
+    .col-8 {
+        @media (min-width: 1271px) {
+            padding-left: 5rem;
+        }
+
+        @media (max-width: 1270px) {
+            padding-left: 5rem;
+        }
+        @media (max-width: 1080px) {
+            padding-left: 10rem;
+        }
+
+        @media (max-width: 969px) {
+            padding-left: 5rem;
+        }
+        @media (max-width: 800px) {
+            width: 100% !important;
+            padding-left: 2.8rem;
+            padding-right: 2.8rem;
+        }
+    }
+
+    .button-container {
+        @media (max-width: 510px) {
+            flex-direction: column;
+            row-gap: 10px;
+
+            button {
+                width: 195px;
+            }
+        }
+    }
+}
+
+.hero-img-container {
+    @media (max-width: 800px) {
+        text-align: center;
+        width: 100% !important;
+    }
+
+    .hero-img {
+        transform: translateY(25px);
+        margin-left: 5rem;
+
+        @media (max-width: 1135px) {
+            margin-left: 3rem;
+        }
+        @media (max-width: 968px) {
+            max-width: 235px;
+            margin-left: 0;
+        }
+        @media (max-width: 800px) {
+            transform: translateY(45px);
+        }
+    }
+}
+
+.product-title {
+    padding-top: 50px;
+    line-height: 1.1;
+    max-width: 600px;
+    font-size: 6rem;
+
+    @media (max-width: 1290px) {
+        font-size: 4rem;
+    }
+    @media (max-width: 960px) {
+        font-size: 2.5rem;
+        padding-top: 75px;
+    }
+    @media (max-width: 800px) {
+        padding-top: 0;
+    }
+}
+
+.product-description {
+    font-size: 1.2rem;
+    padding: 0;
+    margin-bottom: 1.2rem;
+}
+
+.divider {
+    border-top: 2px solid var(--text-color);
+    margin: 10px 0;
+    width: 20%;
+}
+
+// FIN Carrusel -----------
+
+// Categorías
+
+.categories-container {
+    margin: 0 auto;
+
+    @media (min-width: 1200px) {
+        width: 90%;
+        max-width: 1200px;
+    }
+
+    @media (max-width: 1200px) {
+        width: 80%;
+        max-width: 1200px;
+    }
+
+    .grid {
+        .card-container {
+            @media (min-width: 450px) and (max-width: 767px) {
+                width: 50% !important;
+            }
+        }
+    }
+
+    .category-name {
+        margin-bottom: 0;
+    }
+
+    hr {
+        border-color: black;
+        border-width: 1.5px;
+        border-style: solid;
+        margin-top: 8px;
+    }
+}
+
+.surface-card {
+    background-color: white !important;
+    padding: 10px 10px 20px 10px;
+
+    @media (min-width: 1180px) {
+        padding: 15px 15px 25px 15px;
+    }
+
+    img {
+        padding: 0.5rem;
+    }
+}

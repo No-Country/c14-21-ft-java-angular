@@ -1,0 +1,29 @@
+<div class="grid justify-content-center">
+    <div class="col-12 mb-2 pb-0 lg:mt-4 lg:mb-4">
+        <h2 class="text-900 font-normal category-name">
+            {{ category.title }}
+        </h2>
+        <hr class="w-1" />
+    </div>
+
+    <div class="grid">
+        <div
+            class="col-12 md:col-6 lg:col-3 p-3 mt-4 lg:mt-0 card-container"
+            *ngFor="let product of category.items"
+        >
+            <app-category-product [product]="product"></app-category-product>
+        </div>
+    </div>
+
+    <div
+        class="flex align-items-center justify-content-center w-7 lg:w-3 md:w-5 mt-3"
+    >
+        <button
+            pButton
+            pRipple
+            type="button"
+            label="Ver todo"
+            class="p-button-outlined p-button-secondary w-full"
+        ></button>
+    </div>
+</div>
