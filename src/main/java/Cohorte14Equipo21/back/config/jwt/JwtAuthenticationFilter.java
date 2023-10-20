@@ -21,9 +21,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         if (token==null){
             filterChain.doFilter(request,response);
+            // Agregar el else porque estaba duplicando las solicitudes en angular
+        }else {
+            filterChain.doFilter(request,response);
         }
 
-        filterChain.doFilter(request,response);
+
     }
     private String getTokenFromRequest(HttpServletRequest request){
         final String authHeader=request.getHeader(HttpHeaders.AUTHORIZATION);

@@ -42,7 +42,7 @@ public class Producto {
     @JoinColumn(name = "categorias_id", nullable = false)
     private Categoria categoria;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ofertas", nullable = false)
+    @JoinColumn(name = "ofertas")
     private Oferta oferta;
 
 

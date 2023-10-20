@@ -7,7 +7,8 @@ import Cohorte14Equipo21.back.modelos.tipo.TipoDTO;
 
 import java.util.List;
 
-public record ProductoDTO (String nombre,
+public record ProductoDTO (Long id,
+                            String nombre,
                            String precio,
                            String detalles,
                            Integer stock,
@@ -19,7 +20,8 @@ public record ProductoDTO (String nombre,
 
 
     public ProductoDTO(Producto producto){
-        this(producto.getNombre(),
+        this(   producto.getId(),
+                producto.getNombre(),
                 producto.getPrecio().toString(),
                 producto.getDetalles(),
                 producto.getStock(),

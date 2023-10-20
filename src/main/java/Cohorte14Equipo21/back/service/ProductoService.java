@@ -1,9 +1,14 @@
 package Cohorte14Equipo21.back.service;
 
+import Cohorte14Equipo21.back.modelos.categoria.Categoria;
 import Cohorte14Equipo21.back.modelos.producto.Producto;
+import Cohorte14Equipo21.back.repositorios.CategoriaRepository;
 import Cohorte14Equipo21.back.repositorios.ProductoRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,12 +20,18 @@ public class ProductoService {
 
     @Autowired
     private ProductoRepository productoRepository;
+    @Autowired
+    private CategoriaRepository categoryRepository;
     public List<Producto> todosLasProducto(){
         return productoRepository.findAll();
     }
 
-    public Optional<Producto> encontrarProducto(Long id){
-        return productoRepository.findById(id);
+    public Page<Producto> findByCategory(Pageable pageable, Categoria category) {
+        return productoRepository.findByCategoria(category, pageable);
+    }
+
+    public Producto findOneById(Long id){
+        return productoRepository.findById(id).orElse(null);
     }
 
     public Optional<Producto> encontrarProductoEntero(Producto producto){
