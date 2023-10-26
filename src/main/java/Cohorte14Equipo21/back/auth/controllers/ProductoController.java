@@ -10,7 +10,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-
 @RestController
 @RequestMapping("/producto")
 public class ProductoController {
@@ -31,5 +30,4 @@ public class ProductoController {
     public ResponseEntity<ProductoDTO> agregarProducto(@RequestBody @Valid ProductoRecibido productoRecibido){
         return ResponseEntity.badRequest().build();
     }
-
 }
