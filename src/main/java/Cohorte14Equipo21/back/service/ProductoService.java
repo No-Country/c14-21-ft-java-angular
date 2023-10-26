@@ -1,5 +1,6 @@
 package Cohorte14Equipo21.back.service;
 
+import Cohorte14Equipo21.back.modelos.categoria.Categoria;
 import Cohorte14Equipo21.back.modelos.producto.Producto;
 import Cohorte14Equipo21.back.repositorios.ProductoRepository;
 import jakarta.transaction.Transactional;
@@ -45,5 +46,9 @@ public class ProductoService {
 
     public Boolean existePorId(Long id){
         return productoRepository.existsById(id);
+    }
+
+    public Page<Producto> findByCategory(Pageable pageable, Optional<Categoria> category) {
+        return productoRepository.findByCategoria(category.get(), pageable);
     }
 }
