@@ -24,8 +24,11 @@ public class Imagen {
     private String imagenUrl;
     @Column(name = "imagen_id", nullable = false)
     private String imagenId;
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "producto_id",nullable = false)
-    private Producto producto;
 
+
+    public Imagen(String nombre, String imagenUrl, String imagenId){
+        this.nombre=nombre;
+        this.imagenUrl=imagenUrl;
+        this.imagenId=imagenId;
+    }
 }

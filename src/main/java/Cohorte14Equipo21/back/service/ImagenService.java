@@ -15,6 +15,10 @@ public class ImagenService {
 
     @Autowired
     private ImagenRepository imagenRepository;
+
+    public List<Imagen> list(){
+        return imagenRepository.findByOrderById();
+    }
     public List<Imagen> todosLasImagenes(){
         return imagenRepository.findAll();
     }

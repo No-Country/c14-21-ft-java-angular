@@ -4,11 +4,12 @@ import Cohorte14Equipo21.back.modelos.producto.DTO.ProductoDTO;
 import Cohorte14Equipo21.back.modelos.producto.DTO.ProductoRecibido;
 import Cohorte14Equipo21.back.modelos.producto.Producto;
 import Cohorte14Equipo21.back.service.ProductoService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/producto")
@@ -18,21 +19,17 @@ public class ProductoController {
     ProductoService productoService;
 
     @GetMapping
-    public ResponseEntity<List<ProductoDTO>> todosLosProductos(){
-        List<Producto> var = productoService.todosLasProducto();
-        if(var.isEmpty()){
-            return ResponseEntity.badRequest().build();
-        }else {
-            return ResponseEntity.ok(productoService.todosLasProducto()
-                    .stream()
-                    .map(ProductoDTO::new)
-                    .toList());
-        }
+    public ResponseEntity<Page<Producto>> todosLosProductos(@RequestParam(defaultValue = "1") int page,
+                                                            @RequestParam(defaultValue = "10") int size,
+                                                            @RequestParam(defaultValue = "id") String sortBy,
+                                                            @RequestParam(defaultValue = "ASC") String sortOrder){
+        Page<Producto> productos = productoService.getPages(page,size,sortBy,sortOrder);
+        return ResponseEntity.ok(productos);
         }
 
-
-    @GetMapping("/{productoRecibido}")
-    public ResponseEntity<ProductoDTO> agregarProducto(@RequestBody ProductoRecibido productoRecibido){
-        return null;
+    @PostMapping("/{productoRecibido}")
+    public ResponseEntity<ProductoDTO> agregarProducto(@RequestBody @Valid ProductoRecibido productoRecibido){
+        return ResponseEntity.badRequest().build();
     }
+
 }
