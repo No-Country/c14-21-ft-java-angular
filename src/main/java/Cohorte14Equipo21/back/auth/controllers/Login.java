@@ -1,6 +1,5 @@
 package Cohorte14Equipo21.back.auth.controllers;
 
-
 import Cohorte14Equipo21.back.modelos.usuarios.auth.DTO.AuthResponseDTO;
 import Cohorte14Equipo21.back.modelos.usuarios.auth.DTO.LoginDTO;
 import Cohorte14Equipo21.back.modelos.usuarios.auth.DTO.RegisterDTO;
@@ -22,7 +21,6 @@ public class Login {
     private UsersRepository usersRepository;
     @Autowired
     private AuthService authService;
-
     @PostMapping("/entry")
     public ResponseEntity<AuthResponseDTO> login(@RequestBody @Valid LoginDTO loginDTO){
         return ResponseEntity.ok(authService.login(loginDTO));

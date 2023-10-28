@@ -29,7 +29,7 @@ public class Producto {
     private String nombre;
     @Column(name = "precio", nullable = false, scale = 2)
     private Double precio;
-    @JoinColumn(name = "imagenes", nullable = false, referencedColumnName = "id")
+    @JoinColumn(name = "imagenes_id", nullable = false, referencedColumnName = "id", foreignKey = @ForeignKey(name = "imagenes_id"))
     @OneToMany
     private List<Imagen> imagenList;
     @Column(name = "detalles")
@@ -44,7 +44,7 @@ public class Producto {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "categorias_id", nullable = false)
     private Categoria categoria;
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ofertas_id", nullable = false)
     private Oferta oferta;
 
