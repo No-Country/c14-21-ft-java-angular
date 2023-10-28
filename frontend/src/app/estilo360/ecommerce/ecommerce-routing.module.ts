@@ -22,6 +22,12 @@ const routes: Routes = [
         loadChildren: async () =>
             (await import('./pages/eprofile/eprofile.module')).EprofileModule,
     },
+    {
+        path: 'products',
+        loadChildren: async () =>
+            (await import('./pages/products-grid/products-grid.module'))
+                .ProductsGridModule,
+    },
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
 <div class="col-12 mb-2 pb-0 lg:mt-4 lg:mb-4">
     <h2 class="text-900 font-normal category-name">
-        {{ category.title }}
+        {{ category.nombre }}
     </h2>
     <hr class="w-1" />
 </div>
@@ -9,43 +9,9 @@
 <div class="grid">
     <div
         class="col-12 md:col-6 lg:col-3 p-3 mt-4 lg:mt-0 card-container"
-        *ngFor="let product of category.items"
+        *ngFor="let product of products"
     >
-        <div>
-            <div class="surface-card _card">
-                <div class="flex align-items-center justify-content-center">
-                    <img
-                        class="col-12"
-                        [src]="product.img"
-                        [alt]="product.title"
-                        routerLink="/ecommerce/product"
-                    />
-                </div>
-
-                <h5
-                    class="mb-2 text-700 _card-title"
-                    routerLink="/ecommerce/product"
-                >
-                    {{ product.title }}
-                </h5>
-
-                <span *ngIf="product.disscount">
-                    {{ product.disscount | percent }} Off
-                </span>
-
-                <h5 class="text-800">
-                    {{ product.price | currency }}
-                </h5>
-
-                <button
-                    pButton
-                    pRipple
-                    label="Agregar al carrito"
-                    class="p-button"
-                    icon="pi pi-cart-plus"
-                ></button>
-            </div>
-        </div>
+        <app-category-product [product]="product"></app-category-product>
     </div>
 </div>
 
@@ -53,6 +19,7 @@
     class="flex align-items-center justify-content-center w-7 lg:w-3 md:w-5 mt-3 mx-auto"
 >
     <button
+        (click)="seeAllProducts()"
         pButton
         pRipple
         type="button"

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { IProduct } from 'src/app/estilo360/core/models/product.model';
 
 @Component({
     selector: 'app-category-product',
@@ -6,5 +7,5 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./category-product.component.scss'],
 })
 export class CategoryProductComponent {
-    @Input() product: any;
+    @Input() product: IProduct = null;
 }

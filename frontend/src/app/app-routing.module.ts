@@ -92,8 +92,8 @@ import { EcommerceLayoutComponent } from './layouts/ecommerce-layout/ecommerce-l
                             .AdminModule,
                 },
 
-                { path: 'notfound', component: NotfoundComponent },
-                { path: '**', redirectTo: '/notfound' },
+                { path: '404', component: NotfoundComponent },
+                { path: '**', redirectTo: '/404' },
             ],
             {
                 scrollPositionRestoration: 'enabled',

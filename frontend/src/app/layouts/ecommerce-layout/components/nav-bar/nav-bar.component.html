@@ -21,7 +21,9 @@
         <i class="pi pi-bars text-4xl"></i>
     </a>
 
-    <div class="mobile-menu-container align-items-center flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full left-0 px-6 lg:px-0 z-2">
+    <div
+        class="mobile-menu-container align-items-center flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full left-0 px-6 lg:px-0 z-2"
+    >
         <ul
             class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer"
         >
@@ -31,10 +33,21 @@
                     pRipple
                     class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3"
                 >
-                    <span>Home</span>
+                    <span>Inicio</span>
                 </a>
             </li>
-            <li>
+            <li *ngFor="let category of categories">
+                <a
+                    [routerLink]="[
+                        '/ecommerce/products/category/' + category.id
+                    ]"
+                    pRipple
+                    class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3"
+                >
+                    <span>{{ category.nombre }}</span>
+                </a>
+            </li>
+            <!-- <li>
                 <a
                     (click)="
                         router.navigate(['/landing'], {
@@ -72,7 +85,7 @@
                 >
                     <span>Pricing</span>
                 </a>
-            </li>
+            </li> -->
         </ul>
         <div
             class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0"

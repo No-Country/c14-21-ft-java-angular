@@ -10,7 +10,7 @@
             >
                 <ng-template pTemplate="item" let-item>
                     <img
-                        [src]="item.src"
+                        [src]="item.imagenUrl"
                         style="width: 100%; display: block"
                         class="main-img"
                     />
@@ -19,7 +19,11 @@
                     <div
                         class="grid grid-nogutter justify-content-center gallery"
                     >
-                        <img [src]="item.thumbnail" style="display: block" />
+                        <img
+                            width="100px"
+                            [src]="item.imagenUrl"
+                            style="display: block"
+                        />
                     </div>
                 </ng-template>
             </p-galleria>
@@ -27,11 +31,15 @@
 
         <div class="flex align-self-center p-2 lg:p-5 lg:m-5 product-info">
             <div>
-                <h1 class="text-700 text-9xl">WAY KANBAS MINI EBONY</h1>
+                <h1 class="text-700 text-9xl">
+                    {{ product?.nombre }}
+                </h1>
 
-                <p class="text-xl line-through">{{ 1255 | currency }}</p>
+                <!-- <p class="text-xl line-through">{{ 1255 | currency }}</p> -->
 
-                <p class="text-3xl">{{ 1255 | currency }}</p>
+                <p class="text-3xl">
+                    {{ product?.precio | currency }}
+                </p>
 
                 <p class="mb-1">Choose Size</p>
                 <div class="mb-3">
@@ -96,24 +104,7 @@
         <h3 class="pt-2">Descripción</h3>
         <p-divider></p-divider>
         <p class="text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-            quidem labore reiciendis magnam, sunt officia ut provident ipsum
-            adipisci totam reprehenderit facilis esse! Libero officia nihil
-            neque doloremque, magni voluptatum. Deleniti dolores nobis quas
-            placeat aut magnam, accusamus provident eius ex illum reiciendis ab,
-            nisi molestias. Obcaecati quas eveniet nisi necessitatibus
-            dignissimos quaerat atque. Laudantium animi ratione atque nobis
-            distinctio. Blanditiis, magnam. Optio nulla dicta accusantium rem
-            praesentium facere fugiat neque voluptate numquam voluptatem debitis
-            exercitationem corporis quasi velit corrupti eveniet ab, commodi
-            vitae voluptatum sunt nam atque esse aliquam! Placeat totam harum
-            delectus architecto nostrum corrupti non suscipit in? Voluptatum,
-            dolore similique? Sit culpa similique reiciendis odio fugit a
-            voluptatibus quaerat quia hic, dolorem, earum neque est, sunt
-            accusantium. Aut vitae inventore voluptatibus pariatur magnam
-            tempora dolore. Minima nam voluptate id, voluptatem, asperiores
-            error a beatae culpa est laboriosam tenetur blanditiis architecto
-            ratione amet, quos esse rem itaque odio!
+            {{ product?.detalles }}
         </p>
     </div>
 
@@ -121,6 +112,9 @@
         *ngFor="let category of categories"
         class="py-4 lg:px-4 mt-2 _categories-container"
     >
-        <app-category-container [category]="category"></app-category-container>
+        <app-category-container
+            [category]="category"
+            [size]="4"
+        ></app-category-container>
     </div>
 </div>

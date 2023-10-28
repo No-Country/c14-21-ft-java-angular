@@ -2,7 +2,10 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DialogService } from 'primeng/dynamicdialog';
 import { ShoppingCartComponent } from '../../../eshared/components/shopping-cart/shopping-cart.component';
-import {Carousel} from 'primeng/carousel'
+import { Carousel } from 'primeng/carousel';
+import { CategoriesService } from 'src/app/estilo360/core/services/categories.service';
+import { SearchParams } from 'src/app/estilo360/core/classes/search-params';
+import { catchError, tap } from 'rxjs';
 
 @Component({
     selector: 'app-home',
@@ -24,102 +27,22 @@ export class HomeComponent {
         },
     ];
 
-    categories = [
-        {
-            title: 'Category 1',
-            items: [
-                {
-                    title: 'Product 1',
-                    img: 'assets/ecommerce/products/product.jpg',
-                    price: 1200,
-                    disscount: 0.1,
-                },
-                {
-                    title: 'Product 2',
-                    img: 'assets/ecommerce/products/product.jpg',
-                    price: 1200,
-                    disscount: 0.1,
-                },
-                {
-                    title: 'Product 3',
-                    img: 'assets/ecommerce/products/product.jpg',
-                    price: 1200,
-                    disscount: 0.1,
-                },
-                {
-                    title: 'Product 4',
-                    img: 'assets/ecommerce/products/product.jpg',
-                    price: 1200,
-                    disscount: 0.1,
-                },
-            ],
-        },
-        {
-            title: 'Category 2',
-            items: [
-                {
-                    title: 'Product 1',
-                    img: 'assets/ecommerce/products/product.jpg',
-                    price: 1200,
-                    disscount: 0.1,
-                },
-                {
-                    title: 'Product 2',
-                    img: 'assets/ecommerce/products/product.jpg',
-                    price: 1200,
-                    disscount: 0.1,
-                },
-                {
-                    title: 'Product 3',
-                    img: 'assets/ecommerce/products/product.jpg',
-                    price: 1200,
-                    disscount: 0.1,
-                },
-                {
-                    title: 'Product 4',
-                    img: 'assets/ecommerce/products/product.jpg',
-                    price: 1200,
-                    disscount: 0.1,
-                },
-            ],
-        },
-        {
-            title: 'Category 3',
-            items: [
-                {
-                    title: 'Product 1',
-                    img: 'assets/ecommerce/products/product.jpg',
-                    price: 1200,
-                    disscount: 0.1,
-                },
-                {
-                    title: 'Product 2',
-                    img: 'assets/ecommerce/products/product.jpg',
-                    price: 1200,
-                    disscount: 0.1,
-                },
-                {
-                    title: 'Product 3',
-                    img: 'assets/ecommerce/products/product.jpg',
-                    price: 1200,
-                    disscount: 0.1,
-                },
-                {
-                    title: 'Product 4',
-                    img: 'assets/ecommerce/products/product.jpg',
-                    price: 1200,
-                    disscount: 0.1,
-                },
-            ],
-        },
-    ];
-    constructor(public router: Router, private dialogService: DialogService) {
-        Carousel.prototype.onTouchMove = () =>{}
+    private readonly params = new SearchParams();
+
+    categories = [];
+    constructor(private categoriesService: CategoriesService) {}
+
+    ngOnInit() {
+        this.getCategories().subscribe();
     }
 
-    onShowCart() {
-        this.dialogService.open(ShoppingCartComponent, {
-            width: '70%',
-        });
+    getCategories() {
+        return this.categoriesService
+            .getAllPaginated(this.params.getParams())
+            .pipe(
+                tap((response) => {
+                    this.categories = response.content;
+                })
+            );
     }
 }

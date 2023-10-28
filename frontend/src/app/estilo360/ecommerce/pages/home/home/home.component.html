@@ -70,5 +70,8 @@
     *ngFor="let category of categories"
     class="py-4 mt-5 _categories-container _container"
 >
-    <app-category-container [category]="category"></app-category-container>
+    <app-category-container
+        [category]="category"
+        [size]="4"
+    ></app-category-container>
 </div>

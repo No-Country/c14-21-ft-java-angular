@@ -23,7 +23,6 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
         DynamicDialogModule,
     ],
     providers: [
-        { provide: LocationStrategy, useClass: HashLocationStrategy },
         CountryService,
         CustomerService,
         EventService,

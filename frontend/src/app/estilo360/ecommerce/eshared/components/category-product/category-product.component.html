@@ -1,24 +1,38 @@
 <div>
     <div class="surface-card">
         <div class="flex align-items-center justify-content-center">
-            <img class="col-12" [src]="product.img" [alt]="product.title" />
+            <img
+                [routerLink]="['/ecommerce/product/' + product.id]"
+                class="col-12"
+                [src]="
+                    product.imagenList[0]?.imagenUrl ??
+                    'assets/ecommerce/products/product.jpg'
+                "
+                [alt]="product.nombre"
+            />
         </div>
-        <h5 class="mb-2 text-700">
-            {{ product.title }}
-        </h5>
-        <span *ngIf="product.disscount"
-            >{{ product.disscount | percent }} Off</span
+
+        <a [routerLink]="['/ecommerce/product/' + product.id]"
+            ><h5 class="mb-2 text-700">{{ product.nombre }}</h5></a
         >
+
+        <!-- <span *ngIf="product.disscount"
+            >{{ product.disscount | percent }} Off</span
+        > -->
         <h5 class="text-800">
-            {{ product.price | currency }}
+            {{ product.precio | currency }}
         </h5>
 
-        <button
-            pButton
-            pRipple
-            label="Add To Cart"
-            class="p-button-danger"
-            icon="pi pi-cart-plus"
-        ></button>
+        <div class="col-12 flex justify-content-center">
+            <div>
+                <button
+                    pButton
+                    pRipple
+                    label="Add To Cart"
+                    class="p-button-danger"
+                    icon="pi pi-cart-plus"
+                ></button>
+            </div>
+        </div>
     </div>
 </div>

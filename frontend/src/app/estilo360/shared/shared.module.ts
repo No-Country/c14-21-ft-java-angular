@@ -14,6 +14,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { DropdownModule } from 'primeng/dropdown';
 import { AvatarModule } from 'primeng/avatar';
 import { TagModule } from 'primeng/tag';
+import { RouterModule } from '@angular/router';
 const PRIMENG_MODULES = [
     CommonModule,
     DividerModule,
@@ -30,6 +31,7 @@ const PRIMENG_MODULES = [
     DropdownModule,
     AvatarModule,
     TagModule,
+    RouterModule,
 ];
 @NgModule({
     declarations: [],
