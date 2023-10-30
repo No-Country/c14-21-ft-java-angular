@@ -29,7 +29,7 @@ public class Producto {
     private String nombre;
     @Column(name = "precio", nullable = false, scale = 2)
     private Double precio;
-    @JoinColumn(name = "imagenes_id", nullable = false, referencedColumnName = "id", foreignKey = @ForeignKey(name = "imagenes_id"))
+    @JoinColumn(name = "imagenes", nullable = false, referencedColumnName = "id", foreignKey = @ForeignKey(name = "imagenes_id"))
     @OneToMany
     private List<Imagen> imagenList;
     @Column(name = "detalles")
