@@ -26,7 +26,7 @@ public class Login {
         return ResponseEntity.ok(authService.login(loginDTO));
     }
     @PostMapping("/registro")
-    public ResponseEntity<AuthResponseDTO> resgitro(@RequestBody @Valid RegisterDTO registerDTO){
+    public ResponseEntity<AuthResponseDTO> resgitro(@RequestBody RegisterDTO registerDTO){
         return ResponseEntity.ok(authService.register(registerDTO));
     }
 }
