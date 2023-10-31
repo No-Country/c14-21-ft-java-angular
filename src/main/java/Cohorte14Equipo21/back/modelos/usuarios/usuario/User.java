@@ -1,5 +1,6 @@
 package Cohorte14Equipo21.back.modelos.usuarios.usuario;
 
+import Cohorte14Equipo21.back.modelos.usuarios.auth.DTO.LoginDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

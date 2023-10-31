@@ -3,6 +3,7 @@ package Cohorte14Equipo21.back.auth.controllers;
 import Cohorte14Equipo21.back.modelos.usuarios.auth.DTO.AuthResponseDTO;
 import Cohorte14Equipo21.back.modelos.usuarios.auth.DTO.LoginDTO;
 import Cohorte14Equipo21.back.modelos.usuarios.auth.DTO.RegisterDTO;
+import Cohorte14Equipo21.back.modelos.usuarios.usuario.User;
 import Cohorte14Equipo21.back.repositorios.UsersRepository;
 import Cohorte14Equipo21.back.service.AuthService;
 import jakarta.validation.Valid;
@@ -22,7 +23,7 @@ public class Login {
     @Autowired
     private AuthService authService;
     @PostMapping("/entry")
-    public ResponseEntity<AuthResponseDTO> login(@RequestBody @Valid LoginDTO loginDTO){
+    public ResponseEntity<AuthResponseDTO> login(@RequestBody LoginDTO loginDTO){
         return ResponseEntity.ok(authService.login(loginDTO));
     }
     @PostMapping("/registro")
