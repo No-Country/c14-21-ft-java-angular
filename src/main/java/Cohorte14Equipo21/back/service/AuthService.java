@@ -5,7 +5,6 @@ import Cohorte14Equipo21.back.modelos.usuarios.auth.AuthResponse;
 import Cohorte14Equipo21.back.modelos.usuarios.auth.DTO.AuthResponseDTO;
 import Cohorte14Equipo21.back.modelos.usuarios.auth.DTO.LoginDTO;
 import Cohorte14Equipo21.back.modelos.usuarios.auth.DTO.RegisterDTO;
-import Cohorte14Equipo21.back.modelos.usuarios.auth.LoginRequest;
 import Cohorte14Equipo21.back.modelos.usuarios.usuario.Role;
 import Cohorte14Equipo21.back.modelos.usuarios.usuario.User;
 import Cohorte14Equipo21.back.repositorios.UsersRepository;
@@ -26,8 +25,8 @@ public class AuthService {
     private final AuthenticationManager authenticationManager;
 
     public AuthResponseDTO login(LoginDTO request){
-        var auth = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.username(),request.password()));
-        UserDetails user = usersRepository.findByUserName(request.username()).orElseThrow();
+        var auth = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.email(),request.password()));
+        UserDetails user = usersRepository.findByEmail(request.email()).orElseThrow();
         String token = jwtService.getToken(user);
         return AuthResponse.builder().token(token).build().repuesta();
     }
