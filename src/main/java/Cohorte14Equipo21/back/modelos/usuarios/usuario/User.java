@@ -36,7 +36,7 @@ public class User implements UserDetails {
     private Role role;
     @OneToMany
     @JoinColumn(name = "direcciones", nullable = false, referencedColumnName = "id")
-    private Direccion direccion;
+    private List<Direccion> direccion;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

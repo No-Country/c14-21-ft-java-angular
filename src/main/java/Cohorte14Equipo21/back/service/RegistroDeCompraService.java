@@ -19,6 +19,7 @@ public class RegistroDeCompraService {
     @Autowired
     private EntityManager entityManager;
 
+
     public Optional<RegistroDeCompra> buscarRegistro(Long id){
         User usuario = entityManager.find(User.class, id);
         if (usuario == null) return  null;
@@ -31,6 +32,15 @@ public class RegistroDeCompraService {
         }catch (NoResultException e){
             return null;
         }
+    }
+
+    public void guardar(RegistroDeCompra registroDeCompra){
+        registroDeCompraRepository.save(registroDeCompra);
+    }
+
+    public RegistroDeCompra buscarPorIdDelCliente(Long id){
+        Optional<RegistroDeCompra> registro = Optional.of(registroDeCompraRepository.buscarPorClienteId(id));
+        return registro.orElse(null);
     }
 
 }

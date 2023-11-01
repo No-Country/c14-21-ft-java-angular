@@ -2,7 +2,10 @@ package Cohorte14Equipo21.back.modelos.registrodecompra;
 
 
 import Cohorte14Equipo21.back.modelos.producto.Producto;
+import Cohorte14Equipo21.back.modelos.registrodecompra.dto.RegistroDeCompraDTO;
 import Cohorte14Equipo21.back.modelos.usuarios.usuario.User;
+import Cohorte14Equipo21.back.repositorios.UsersRepository;
+import Cohorte14Equipo21.back.service.UserService;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,6 +28,11 @@ public class RegistroDeCompra {
     @JoinColumn(name = "productos_comprados", nullable = false, referencedColumnName = "id")
     private List<Producto> productosComprados = new ArrayList<>();
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cliente", nullable = false)
-    private User usuario;
+    @JoinColumn(name = "user", nullable = false)
+    private User user;
+
+    public RegistroDeCompra(RegistroDeCompraDTO registroDeCompraDTO, Long id){
+        this.productosComprados = registroDeCompraDTO.productos().stream().map(Producto::new).toList();
+        this.user = UserService.traerUsuario(id);
+    }
 }

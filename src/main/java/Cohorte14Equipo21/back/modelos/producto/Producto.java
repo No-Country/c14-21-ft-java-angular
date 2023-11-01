@@ -48,4 +48,15 @@ public class Producto {
     @JoinColumn(name = "ofertas_id", nullable = false)
     private Oferta oferta;
 
+    public Producto(ProductoDTO productoDTO){
+        this.nombre =productoDTO.nombre();
+        this.categoria = new Categoria(productoDTO.categoria());
+        this.detalles=productoDTO.detalles();
+        this.imagenList = productoDTO.imagenes().stream().map(Imagen::new).toList();
+        this.precio=Double.parseDouble(productoDTO.precio());
+        this.stock=productoDTO.stock();
+        this.tipo=new Tipo(productoDTO.tipo());
+        this.oferta=new Oferta();
+    }
+
 }

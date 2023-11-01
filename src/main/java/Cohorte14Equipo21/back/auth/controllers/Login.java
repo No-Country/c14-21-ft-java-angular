@@ -1,8 +1,8 @@
 package Cohorte14Equipo21.back.auth.controllers;
 
 import Cohorte14Equipo21.back.modelos.usuarios.auth.DTO.AuthResponseDTO;
-import Cohorte14Equipo21.back.modelos.usuarios.auth.DTO.LoginDTO;
 import Cohorte14Equipo21.back.modelos.usuarios.auth.DTO.RegisterDTO;
+import Cohorte14Equipo21.back.modelos.usuarios.auth.DTO.UserDTO;
 import Cohorte14Equipo21.back.repositorios.UsersRepository;
 import Cohorte14Equipo21.back.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +21,8 @@ public class Login {
     @Autowired
     private AuthService authService;
     @PostMapping("/entry")
-    public ResponseEntity<AuthResponseDTO> login(@RequestBody LoginDTO loginDTO){
-        return ResponseEntity.ok(authService.login(loginDTO));
+    public ResponseEntity<AuthResponseDTO> login(@RequestBody UserDTO userDTO){
+        return ResponseEntity.ok(authService.login(userDTO));
     }
     @PostMapping("/registro")
     public ResponseEntity<AuthResponseDTO> resgitro(@RequestBody RegisterDTO registerDTO){
