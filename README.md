@@ -1,17 +1,27 @@
 
 [Tecnologias](#tecnologias)
 
-[Equipo](#participantes)
+[Equipo](#miembros-del-equipo)
 
 [Producto](#estilo360)
 
-# Estilo360
-
-<iframe width="500" height="300" src="https://youtu.be/fhN_aloUDS0?si=GiLTbnhZ-gxy2fND"  allowfullscreen></iframe>
 
 
+### Queres saber que ofrecemos ? mira nuestra presentacion!!
 
-[Nuestro producto online](https://main--beautiful-kitsune-cdc737.netlify.app/ecommerce)
+
+[Link al video](https://youtu.be/fhN_aloUDS0?si=GiLTbnhZ-gxy2fND)
+
+
+
+
+# Miembros del equipo
+
+* 
+    - Genaro Adrian Front-end
+    - Maximiliano Cosman QA
+    - Karina Monzon QA
+    - Matias Sosa Back-end
 
 # Tecnologias
 * Frontend 
@@ -30,14 +40,12 @@
     <img src="https://res.cloudinary.com/deuesxnd0/image/upload/v1699034016/mqqgv84m4tkjfivnx98w.png" alt="js" width="90" height="90">
     <img src="https://res.cloudinary.com/deuesxnd0/image/upload/v1699034118/brn5dnzwwjdmdlcnypli.png" alt="js" width="90" height="90">
     
+# Estilo360
+
+[Nuestro producto online](https://main--beautiful-kitsune-cdc737.netlify.app/ecommerce)
+
+Nuestro producto ofrece una solucion sencilla a la compra de ropa, con un catalogo para toda la familia que puede filtrar por categorias ademas de integrar un carrito con control de stock! elegi como pagar y donde te llega la prenda
 
 
-# Participantes
-
-* 
-    - Genaro Adrian Front-end
-    - Maximiliano Cosman QA
-    - Karina Monzon QA
-    - Matias Sosa Back-end
 
 
