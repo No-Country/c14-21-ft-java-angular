@@ -21,7 +21,7 @@
     - Genaro Adrian Front-end
     - Maximiliano Cosman QA [Linkedin](https://www.linkedin.com/in/maxi-cosman/)
       
-    - Karina Monzon QA
+    - Karina Monzon QA [Linkedin](https://www.linkedin.com/in/karina-monzon/)
     - Matias Sosa Back-end [Linkedin](https://www.linkedin.com/in/matias-sosa-a03560242/)
       
 
