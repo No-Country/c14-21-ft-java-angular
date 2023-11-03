@@ -47,5 +47,7 @@
 Nuestro producto ofrece una solucion sencilla a la compra de ropa, con un catalogo para toda la familia que puede filtrar por categorias ademas de integrar un carrito con control de stock! elegi como pagar y donde te llega la prenda
 
 
+![Alt text](https://res.cloudinary.com/deuesxnd0/image/upload/v1699035433/earnjrr6tqjo4wdkpqjv.png)
+![Alt text](https://res.cloudinary.com/deuesxnd0/image/upload/v1699035433/wo0insqy3d0cl2emuzil.png)
 
 
